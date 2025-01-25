@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 0
   _collider: {fileID: 6563294503093159880}
-  _velocityTreshold: 100
+  _velocityTreshold: 600
 --- !u!114 &7874817186672766380
 MonoBehaviour:
   m_ObjectHideFlags: 0

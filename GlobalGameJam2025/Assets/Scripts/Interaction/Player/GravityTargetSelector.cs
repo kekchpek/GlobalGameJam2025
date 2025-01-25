@@ -22,7 +22,7 @@ namespace BubbleJump.Interaction.Player
         private readonly HashSet<IGravityTarget> _targets = new();
 
         private GravityBehaviour _gravityBehaviour;
-        private Vector3? _lastSelectedTargetPosition;
+        private IGravityTarget _lastSelectedTarget;
 
         private void Awake()
         {
@@ -37,7 +37,7 @@ namespace BubbleJump.Interaction.Player
             if (obj.collider.TryGetComponent<IGravityTarget>(out var target))
             {
                 _gravityBehaviour.SetGravityTarget(target);
-                _lastSelectedTargetPosition = obj.transform.position;
+                _lastSelectedTarget = target;
             }
         }
 
@@ -53,12 +53,12 @@ namespace BubbleJump.Interaction.Player
             foreach (var trs in _targets)
             {
                 var otherPos = trs.Transform.position;
-                if (_lastSelectedTargetPosition.HasValue && 
-                    otherPos.y > _lastSelectedTargetPosition.Value.y &&
-                    (otherPos - pos).sqrMagnitude * _closeFactor < (_lastSelectedTargetPosition.Value - pos).sqrMagnitude)
+                if (_lastSelectedTarget is { IsEnabled: true } && 
+                    otherPos.y > _lastSelectedTarget.Transform.position.y &&
+                    (otherPos - pos).sqrMagnitude * _closeFactor < (_lastSelectedTarget.Transform.position - pos).sqrMagnitude)
                 {
                     _gravityBehaviour.SetGravityTarget(trs);
-                    _lastSelectedTargetPosition = trs.Transform.position;
+                    _lastSelectedTarget = trs;
                 }
             }
         }

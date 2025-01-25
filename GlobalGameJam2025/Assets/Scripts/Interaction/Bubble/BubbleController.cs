@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -28,7 +27,7 @@ namespace BubbleJump.Interaction.Bubble
         private void Start()
         {
             _hpText = GetComponentInChildren<TextMeshPro>();
-            _hp = Random.Range(3, 7);
+            _hp = Random.Range(10, 20);
             UpdateHp();
             //_animator = GetComponent<Animator>();
         }
@@ -45,27 +44,18 @@ namespace BubbleJump.Interaction.Bubble
             }
         }
 
+        public void Kill()
+        {
+            _hp = 0;
+            UpdateHp();
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.collider.CompareTag("Player"))
             {
-                Rigidbody2D rb = collision.rigidbody;
-                Vector2 orgVelocity = collision.relativeVelocity;
-
-                Debug.Log($"Player Velocity Magnitude: {orgVelocity.sqrMagnitude}");
-
-                if (orgVelocity.sqrMagnitude >= _velocityTreshold)
-                {
-                    Physics2D.IgnoreCollision(_collider, collision.collider, true);
-                     rb.linearVelocity = orgVelocity;
-                    _hp = 0;
-                    UpdateHp();
-                }
-                else
-                {
-                    _hp--;
-                    UpdateHp();
-                }
+                _hp--;
+                UpdateHp();
             }
             
         }
