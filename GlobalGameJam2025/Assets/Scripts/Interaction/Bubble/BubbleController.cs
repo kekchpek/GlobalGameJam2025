@@ -28,7 +28,7 @@ namespace BubbleJump
             
             if (collision.collider.CompareTag("Player"))
             {
-                _hp--;
+                //_hp--;
                 //_animator.SetTrigger("Shake");
             }
         }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace BubbleJump.Interaction.Player
@@ -8,6 +9,9 @@ namespace BubbleJump.Interaction.Player
 
         private Transform _gravityTarget;
         private Rigidbody2D _rigidbody;
+
+        [SerializeField]
+        private Transform _graphics;
 
         public Transform Target => _gravityTarget;
 
@@ -27,6 +31,19 @@ namespace BubbleJump.Interaction.Player
                 _rigidbody.gravityScale = 1f;
             }
             _gravityTarget = target;
+        }
+
+        private void Update()
+        {
+            if (_graphics && Target)
+            {
+                var pos = transform.position;
+                var targetPos = Target.position;
+                _graphics.position = (pos + targetPos) / 2f;
+                _graphics.right = targetPos - pos;
+                _graphics.localScale = new Vector3((pos - targetPos).magnitude, 0.1f, 1f);
+            }
+
         }
 
         private void FixedUpdate()

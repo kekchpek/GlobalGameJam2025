@@ -296,8 +296,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -645,11 +645,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609089793}
   m_CullTransparentMesh: 1
---- !u!1 &613604259 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8358357173993234233, guid: 9a24a4c5b9d7a4b23826861c89d4912b, type: 3}
-  m_PrefabInstance: {fileID: 1863257822}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &667529806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,6 +1422,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 104428027}
     m_Modifications:
+    - target: {fileID: 5728283191379638979, guid: 9a24a4c5b9d7a4b23826861c89d4912b, type: 3}
+      propertyPath: _speed
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8358357173993234233, guid: 9a24a4c5b9d7a4b23826861c89d4912b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1474,29 +1473,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8358357173993234233, guid: 9a24a4c5b9d7a4b23826861c89d4912b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1863257832}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a24a4c5b9d7a4b23826861c89d4912b, type: 3}
 --- !u!4 &1863257823 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8646298213124374496, guid: 9a24a4c5b9d7a4b23826861c89d4912b, type: 3}
   m_PrefabInstance: {fileID: 1863257822}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1863257832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613604259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a90395321e3a485e87c1006407715c25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 0.5
 --- !u!1 &2004355616
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,8 +31,13 @@ namespace BubbleJump.Interaction.Player
                 var currentPosNorm = currentPos.normalized;
                 var crossIm = Vector3.Cross(currentPosNorm, input).normalized;
                 var rotateDir = Vector3.Cross(crossIm, currentPosNorm).normalized;
-                position += rotateDir * (_speed * Time.fixedDeltaTime * currentPos.magnitude);
-                transform.position = position;
+                
+                var d = rotateDir * (_speed * currentPos.magnitude);
+
+                var linear = _rigidbody2D.linearVelocity;
+                var linearY = Vector3.Dot(linear, -currentPosNorm);
+
+                _rigidbody2D.linearVelocity = -currentPosNorm * linearY + d;
             }
         }
     }
