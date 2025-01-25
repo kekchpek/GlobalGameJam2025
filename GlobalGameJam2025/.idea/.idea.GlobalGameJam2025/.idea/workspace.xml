@@ -2,14 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c626c291-b088-4adf-be55-f67ab00a2d20" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerFallBehaviour.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerFallBehaviour.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerSpawner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerTransformTracker.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerTransformTracker.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Player/IPlayerMutableModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Player/IPlayerMutableModel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Player/IPlayerService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Player/IPlayerService.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Player/PlayerService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Player/PlayerService.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Font/BroncoPersonalUse SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Font/BroncoPersonalUse SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Circle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Circle.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartupScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartupScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Configuration/CoreInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Configuration/CoreInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Camera/CameraController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Level/BubbleSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Level/BubbleSpawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Level/MapController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Level/MapController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/BouncingBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/BouncingBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/BubbleKillBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/BubbleKillBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityTargetSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityTargetSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/Jump Behaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/SuperJumpBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/Jump Behaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/SuperJumpBehaviour.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Player/IPlayerModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Player/IPlayerModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Player/PlayerModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Player/PlayerModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/SuperJump/SuperJumpService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/SuperJump/SuperJumpService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +149,23 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Interaction/Player/BubbleKillBehaviour.cs</url>
+          <line>61</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/BubbleKillBehaviour.cs" initialLine="60" containingFunctionPresentation="method 'OnCollisionEnter2D'">
+            <startOffsets>
+              <option value="1572" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1613" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#UnityEngine.Collision2D" memberName="collider" />

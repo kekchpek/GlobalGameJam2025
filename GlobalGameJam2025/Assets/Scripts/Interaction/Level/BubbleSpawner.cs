@@ -51,7 +51,7 @@ namespace BubbleJump.Level
 
         bool IsValidPosition(Vector2 position)
         {
-            bubbleRadius = Random.Range(1, 6);
+            bubbleRadius = Random.Range(1, 3);
             if (position.x - bubbleRadius < -spawnArea.x / 2 || position.x + bubbleRadius > spawnArea.x / 2 ||
                 position.y - bubbleRadius < -spawnArea.y / 2 || position.y + bubbleRadius > spawnArea.y / 2)
             {

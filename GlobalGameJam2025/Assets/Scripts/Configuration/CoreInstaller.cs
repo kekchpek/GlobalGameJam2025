@@ -35,7 +35,8 @@ namespace BubbleJump.Configuration
             Container.FastBindMono<ITimeManager, TimeManager>();
             Container.FastBind<IAssetsModel, AddressablesAssetsModel>();
             
-            Container.FastBind<IPlayerModel, PlayerModel>();
+            Container.FastBind<IPlayerService, PlayerService>();
+            Container.FastBind<IPlayerMutableModel, IPlayerModel, PlayerModel>();
             
             Container.Bind<IStartupService>().To<StartupService>().AsSingle();
             Container.FastBind<ISuperJumpService, SuperJumpService>();

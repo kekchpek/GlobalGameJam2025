@@ -1,5 +1,6 @@
 using System;
 using BubbleJump.Infrastructure.Time;
+using BubbleJump.Model.Player;
 using UnityEngine;
 
 namespace BubbleJump.Model.SuperJump
@@ -20,16 +21,19 @@ namespace BubbleJump.Model.SuperJump
         
         private readonly ITimeManager _timeManager;
         private readonly ISuperJumpMutableModel _superJumpModel;
+        private readonly IPlayerMutableModel _playerMutableModel;
 
         public event Action<float> Jumped;
 
         public SuperJumpService(
             ITimeManager timeManager,
-            ISuperJumpMutableModel superJumpModel)
+            ISuperJumpMutableModel superJumpModel,
+            IPlayerMutableModel playerMutableModel)
         {
             _timeManager = timeManager;
             _superJumpModel = superJumpModel;
-            
+            _playerMutableModel = playerMutableModel;
+
             _superJumpModel.SetMaxStrength(MaxStr);
             _timeManager.CurrentTimestampUtc.Bind(OnTick);
         }
@@ -69,6 +73,7 @@ namespace BubbleJump.Model.SuperJump
             Jumped?.Invoke(Mathf.Pow(_superJumpModel.Strength.Value, 1.2f));
             _superJumpModel.SetPlannedTime(null);
             _superJumpModel.SetStrength(0f);
+            _playerMutableModel.SetPlayerOnTheGround(false);
         }
 
 

@@ -27,13 +27,16 @@ namespace BubbleJump.Interaction.Player
 
         private void OnColliderEntered(Collision2D col)
         {
-            Vector2 pos = transform.position;
-            Vector2 bubblePos = col.transform.position;
-            var outDir = (pos - bubblePos).normalized;
-            var speed = col.relativeVelocity;
-            var speedOutProjectionMgn = Mathf.Abs(Vector3.Dot(speed, outDir)); 
-            _rigidbody.linearVelocity = outDir * (speedOutProjectionMgn * _speedFactor + _additionSpeed);
-            _rigidbody.totalForce = Vector2.zero;
+            if (col.collider.enabled)
+            {
+                Vector2 pos = transform.position;
+                Vector2 bubblePos = col.transform.position;
+                var outDir = (pos - bubblePos).normalized;
+                var speed = col.relativeVelocity;
+                var speedOutProjectionMgn = Mathf.Abs(Vector3.Dot(speed, outDir));
+                _rigidbody.linearVelocity = outDir * (speedOutProjectionMgn * _speedFactor + _additionSpeed);
+                _rigidbody.totalForce = Vector2.zero;
+            }
         }
     }
 }

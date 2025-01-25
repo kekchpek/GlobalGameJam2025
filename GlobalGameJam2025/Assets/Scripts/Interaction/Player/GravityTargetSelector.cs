@@ -2,12 +2,15 @@ using System.Collections.Generic;
 using System.Linq;
 using BubbleJump.Interaction.Auxiliary;
 using BubbleJump.Interaction.Bubble;
+using BubbleJump.Model.Player;
 using UnityEngine;
+using Zenject;
 
 namespace BubbleJump.Interaction.Player
 {
     
     [RequireComponent(typeof(GravityBehaviour))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class GravityTargetSelector : MonoBehaviour
     {
 
@@ -20,17 +23,29 @@ namespace BubbleJump.Interaction.Player
         [SerializeField]
         private PhysicsDispatcher _collider;
 
+        private bool _selectClosestOnce = true;
+
+
         private readonly HashSet<IGravityTarget> _targets = new();
 
         private GravityBehaviour _gravityBehaviour;
         private IGravityTarget _lastSelectedTarget;
+        private Rigidbody2D _rigidbody;
+        private IPlayerModel _playerModel;
 
         private void Awake()
         {
+            _rigidbody = GetComponent<Rigidbody2D>();
             _gravityBehaviour = GetComponent<GravityBehaviour>();
             _trigger.TriggerExited += OnTriggerExited;
             _trigger.TriggerEntered += OnTriggerEntered;
             _collider.ColliderEntered += OnCollisionEntered;
+        }
+
+        [Inject]
+        public void Construct(IPlayerModel playerModel)
+        {
+            _playerModel = playerModel;
         }
 
         private void OnCollisionEntered(Collision2D obj)
@@ -64,8 +79,11 @@ namespace BubbleJump.Interaction.Player
             }
         }
 
-        public void SelectClosest()
+        private void SelectClosest()
         {
+            if (!_selectClosestOnce)
+                return;
+            _selectClosestOnce = false;
             var minDist = float.MaxValue;
             var minIndex = -1;
             var arr = _targets.ToArray();

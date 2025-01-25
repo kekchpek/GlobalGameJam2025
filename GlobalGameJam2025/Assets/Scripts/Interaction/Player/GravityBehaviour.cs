@@ -41,7 +41,9 @@ namespace BubbleJump.Interaction.Player
                 var targetPos = TargetTransform.position;
                 _graphics.position = (pos + targetPos) / 2f;
                 _graphics.right = targetPos - pos;
-                _graphics.localScale = new Vector3((pos - targetPos).magnitude, 0.1f, 1f);
+                var scale = new Vector3((pos - targetPos).magnitude, 0.1f, 1f);
+                var pScale = _graphics.parent.lossyScale;
+                _graphics.localScale = new Vector3(scale.x / pScale.x, scale.y / pScale.y, scale.z / pScale.z);
             }
 
         }

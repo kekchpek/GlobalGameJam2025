@@ -1,4 +1,6 @@
+using BubbleJump.Model.Player;
 using UnityEngine;
+using Zenject;
 
 namespace BubbleJump.Interaction.Player
 {
@@ -13,6 +15,8 @@ namespace BubbleJump.Interaction.Player
         
         private GravityBehaviour _gravityBehaviour;
         private Rigidbody2D _rigidbody2D;
+
+        private IPlayerModel _playerModel;
         
         private void Awake()
         {
@@ -20,23 +24,36 @@ namespace BubbleJump.Interaction.Player
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
+        [Inject]
+        public void Construct(IPlayerModel playerModel)
+        {
+            _playerModel = playerModel;
+        }
+
         private void FixedUpdate()
         {
-            if (_gravityBehaviour.TargetTransform)
+            if (!_playerModel.IsOnTheGround.Value)
             {
-                var input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
-                var position = transform.position;
-                var currentPos = (position - _gravityBehaviour.TargetTransform.position);
-                var currentPosNorm = currentPos.normalized;
-                var crossIm = Vector3.Cross(currentPosNorm, input).normalized;
-                var rotateDir = Vector3.Cross(crossIm, currentPosNorm).normalized;
-                
-                var d = rotateDir * (_speed * currentPos.magnitude);
+                if (_gravityBehaviour.TargetTransform)
+                {
+                    var input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+                    var position = transform.position;
+                    var currentPos = (position - _gravityBehaviour.TargetTransform.position);
+                    var currentPosNorm = currentPos.normalized;
+                    var crossIm = Vector3.Cross(currentPosNorm, input).normalized;
+                    var rotateDir = Vector3.Cross(crossIm, currentPosNorm).normalized;
 
-                var linear = _rigidbody2D.linearVelocity;
-                var linearY = Vector3.Dot(linear, -currentPosNorm);
+                    var d = rotateDir * (_speed * currentPos.magnitude);
 
-                _rigidbody2D.linearVelocity = -currentPosNorm * linearY + d;
+                    var linear = _rigidbody2D.linearVelocity;
+                    var linearY = Vector3.Dot(linear, -currentPosNorm);
+
+                    _rigidbody2D.linearVelocity = -currentPosNorm * linearY + d;
+                }
+            }
+            else
+            {
+                _rigidbody2D.linearVelocity = Vector2.right * (Input.GetAxis("Horizontal") * 3f);
             }
         }
     }

@@ -1,8 +1,7 @@
-using System;
-using BubbleJump.Interaction.Player;
+using BubbleJump.Interaction.Bubble;
 using UnityEngine;
 
-namespace BubbleJump.Interaction.Bubble
+namespace BubbleJump.Interaction.Player
 {
     
     [RequireComponent(typeof(Rigidbody2D))]
@@ -17,14 +16,16 @@ namespace BubbleJump.Interaction.Bubble
         private GameObject _killingLayout;
 
         [SerializeField]
-        private GravityTargetSelector _targetSelector;
-
-        [SerializeField]
         private float _startKillingThreshold;
         
         [SerializeField]
         private float _endKillingThreshold;
 
+        [SerializeField]
+        private Vector2 _linearVelocity;
+        [SerializeField]
+        private Vector2 _position;
+        
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
@@ -46,6 +47,9 @@ namespace BubbleJump.Interaction.Bubble
                     SetKilling(true);
                 }
             }
+
+            _linearVelocity = _rigidbody.linearVelocity;
+            _position = _rigidbody.position;
         }
 
         private void OnCollisionEnter2D(Collision2D col)
@@ -54,9 +58,9 @@ namespace BubbleJump.Interaction.Bubble
             {
                 if (col.collider.CompareTag("Bubbles"))
                 {
-                    var orgVelocity = col.relativeVelocity;
-                    _rigidbody.position = transform.position;
-                    _rigidbody.linearVelocity = -orgVelocity;
+                    _rigidbody.linearVelocity = _linearVelocity;
+                    _rigidbody.position = _position;
+                    transform.position = _position;
                     col.collider.GetComponent<BubbleController>().Kill();
                 }
             }
@@ -67,10 +71,6 @@ namespace BubbleJump.Interaction.Bubble
             _isKilling = isKilling;
             if (_killingLayout)
                 _killingLayout.SetActive(isKilling);
-            if (!_isKilling && _targetSelector)
-            {
-                _targetSelector.SelectClosest();
-            }
         }
     }
 }
