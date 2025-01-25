@@ -16,7 +16,7 @@ namespace BubbleJump
 
         private void Update()
         {
-            transform.position = player.position + offset;
+            transform.position = _player.position + offset;
         }
     }
 }
