@@ -32,8 +32,9 @@ namespace BubbleJump.Level
                 if (IsValidPosition(randomPosition))
                 {
                     GameObject newBubble = Instantiate(bubble, worldPosition, Quaternion.identity);
-                    newBubble.transform.localScale *= bubbleRadius;
+                    newBubble.transform.localScale = Vector3.one * bubbleRadius;
                     spawnedBubbles.Add(randomPosition);
+                    newBubble.transform.SetParent(transform);
                 }
 
                 attempts++;
