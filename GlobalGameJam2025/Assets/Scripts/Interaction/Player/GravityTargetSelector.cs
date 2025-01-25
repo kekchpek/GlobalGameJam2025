@@ -31,6 +31,7 @@ namespace BubbleJump.Interaction.Player
         private void OnCollisionEntered(Collision2D obj)
         {
             _gravityBehaviour.SetGravityTarget(obj.transform);
+            _lastSelectedTargetPosition = obj.transform.position;
         }
 
         private void OnTriggerEntered(Collider2D obj)
@@ -40,9 +41,13 @@ namespace BubbleJump.Interaction.Player
 
         private void FixedUpdate()
         {
+            var pos = transform.position;
             foreach (var trs in _enteredTransforms)
             {
-                if (_lastSelectedTargetPosition.HasValue && trs.position.y > _lastSelectedTargetPosition.Value.y)
+                var otherPos = trs.position;
+                if (_lastSelectedTargetPosition.HasValue && 
+                    otherPos.y > _lastSelectedTargetPosition.Value.y &&
+                    (otherPos - pos).sqrMagnitude < (_lastSelectedTargetPosition.Value - pos).sqrMagnitude)
                 {
                     _gravityBehaviour.SetGravityTarget(trs);
                     _lastSelectedTargetPosition = trs.position;
