@@ -18,6 +18,7 @@ namespace BubbleJump.Level
 
         private float optimizerCooldown;
 
+        private GameObject lastChunk;
         private List<GameObject> spawnedChunks = new List<GameObject>();
 
         private void Start()
@@ -26,34 +27,38 @@ namespace BubbleJump.Level
         }
         void Update()
         {
-            CheckAndSpawnChunks();
-            ChunkOptimizer();
+            if(currentChunk != null)
+            {
+                CheckAndSpawnChunks();
+                ChunkOptimizer();
+            }
         }
 
         void CheckAndSpawnChunks()
         {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(player.position, checkerRadius, levelMask);
-            foreach (Collider2D hit in hits)
+            if (player.transform.position.y <= currentChunk.transform.position.y)
             {
-                if (hit.gameObject == currentChunk)
-                {
-
-                    SpawnChunk();
-
-                    break;
-                }
+                SpawnChunk();
             }
         }
 
         void SpawnChunk()
         {
-            Vector2 nextChunk = currentChunk.transform.Find("NextChunk").position;
-
-            if (!Physics2D.OverlapPoint(nextChunk, levelMask))
+            Vector3 nextChunk = currentChunk.transform.Find("NextChunk").position;
+            if(lastChunk != null)
             {
-                GameObject newChunk1 = Instantiate(LevelChunk, nextChunk, Quaternion.identity, chunkParent);
-                spawnedChunks.Add(newChunk1);
+                if (lastChunk.transform.position != nextChunk)
+                {
+                    lastChunk = Instantiate(LevelChunk, nextChunk, Quaternion.identity, chunkParent);
+                    spawnedChunks.Add(lastChunk);
+                }
             }
+            else
+            {
+                lastChunk = Instantiate(LevelChunk, nextChunk, Quaternion.identity, chunkParent);
+                spawnedChunks.Add(lastChunk);
+            }
+            
         }
 
         private void ChunkOptimizer()
