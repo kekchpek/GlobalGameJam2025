@@ -4,6 +4,7 @@ namespace BubbleJump
 {
     public class BubbleController : MonoBehaviour
     {
+        [SerializeField]
         private int _hp;
         private Animator _animator;
 
@@ -18,13 +19,14 @@ namespace BubbleJump
             if(_hp <= 0)
             {
                 //_animator.SetBool("Explode",true);
-                Destroy(this, 0.5f);
+                Destroy(gameObject, 0.5f);
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.CompareTag("Player"))
+            
+            if (collision.collider.CompareTag("Player"))
             {
                 _hp--;
                 //_animator.SetTrigger("Shake");
