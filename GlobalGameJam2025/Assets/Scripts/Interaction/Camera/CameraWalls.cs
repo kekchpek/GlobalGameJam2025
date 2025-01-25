@@ -23,11 +23,17 @@ namespace BubbleJump.Interaction.Camera
 
         private void Update()
         {
-            float cameraY = _camera.transform.position.y;
+            float halfHeight = Mathf.Tan(Mathf.Deg2Rad * _camera.fieldOfView * 0.5f) * 22f;
+            float halfWidth = halfHeight * _camera.aspect;
 
-            _leftWall.position = new Vector3(_leftWall.position.x, cameraY, _leftWall.position.z);
-            _rightWall.position = new Vector3(_rightWall.position.x, cameraY, _rightWall.position.z);
+            Vector3 leftWallPosition = _camera.transform.position + _camera.transform.forward * 20f;
+            leftWallPosition -= _camera.transform.right * halfWidth;
+
+            Vector3 rightWallPosition = _camera.transform.position + _camera.transform.forward * 20f;
+            rightWallPosition += _camera.transform.right * halfWidth;
+
+            _leftWall.position = leftWallPosition;
+            _rightWall.position = rightWallPosition;
         }
-    
     }
 }
