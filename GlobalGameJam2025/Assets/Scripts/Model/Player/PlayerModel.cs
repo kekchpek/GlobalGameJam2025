@@ -7,7 +7,7 @@ namespace BubbleJump.Model.Player
     {
 
         private readonly IMutable<bool> _isOnTheGround = new Mutable<bool>();
-        private readonly IMutable<bool> _isDead = new Mutable<bool>();
+        private readonly IMutable<bool> _isDead = new Mutable<bool>(true);
         private readonly IMutable<Transform> _transform = new Mutable<Transform>();
         private readonly IMutable<float> _height = new Mutable<float>();
         private readonly IMutable<float> _record = new Mutable<float>();

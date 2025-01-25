@@ -22,6 +22,7 @@ namespace BubbleJump.UI.Menu
             _playerModel = playerModel;
             _playerService = playerService;
             StartLayoutShown = _playerModel.Enabled.ConvertTo(x => !x);
+            _playerService.Respawn();
         }
         
         public void OnSpaceClicked()

@@ -1,4 +1,3 @@
-using System;
 using BubbleJump.Model.Player;
 using UnityEngine;
 using Zenject;
@@ -20,14 +19,14 @@ namespace BubbleJump.Interaction.Player
             _playerModel = playerModel;
         }
         
-        private void OnCollisionEnter(Collision collision)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.collider.CompareTag("Floor"))
             {
                 if (!_playerModel.IsOnTheGround.Value)
                 {
                     _playerService.Die();
-                    Destroy(this);
+                    Destroy(gameObject);
                 }
             }
         }
