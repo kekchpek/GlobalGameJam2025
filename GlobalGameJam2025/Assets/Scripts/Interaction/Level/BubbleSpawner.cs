@@ -9,41 +9,37 @@ namespace BubbleJump.Level
         public int numberOfBubbles;
         public int minDistance;
 
-        private Vector2 spawnArea;
+        //private Vector2 spawnArea;
+        public Vector2 spawnArea = new Vector2(21f, 13f);
         private List<Vector2> spawnedBubbles = new List<Vector2>();
         private float bubbleRadius;
 
 
-        void Start()
-        {
-            Collider2D parentCollider = transform.parent.GetComponent<Collider2D>();
-            spawnArea.x = parentCollider.bounds.size.x;
-            spawnArea.y = parentCollider.bounds.size.y;
-
-            
-        }
         private void Update()
         {
-            if (spawnedBubbles.Count < numberOfBubbles)
-            {
                 spawnBubbles();
-            }
         }
 
         void spawnBubbles()
         {
-            Vector2 randomPosition = GenerateRandomPosition();
-
-            if (IsValidPosition(randomPosition))
+            int attempts = 0; 
+            int maxAttempts = 20;
+            while (spawnedBubbles.Count < numberOfBubbles && attempts < maxAttempts) 
             {
-                GameObject newBubble = Instantiate(bubble, randomPosition, Quaternion.identity);
-                Vector3 newRadius = newBubble.transform.localScale;
-                newRadius.x = bubbleRadius;
-                newRadius.y = bubbleRadius;
-                newBubble.transform.localScale = newRadius;
-                spawnedBubbles.Add(randomPosition);
+                Vector2 randomPosition = GenerateRandomPosition();
+                Vector3 worldPosition = (Vector3)randomPosition + transform.position;
+
+                if (IsValidPosition(randomPosition))
+                {
+                    GameObject newBubble = Instantiate(bubble, worldPosition, Quaternion.identity);
+                    newBubble.transform.localScale *= bubbleRadius;
+                    spawnedBubbles.Add(randomPosition);
+                }
+
+                attempts++;
             }
         }
+            
 
         Vector2 GenerateRandomPosition()
         {
@@ -54,7 +50,7 @@ namespace BubbleJump.Level
 
         bool IsValidPosition(Vector2 position)
         {
-            bubbleRadius = Random.Range(3, 11);
+            bubbleRadius = Random.Range(1, 6);
             if (position.x - bubbleRadius < -spawnArea.x / 2 || position.x + bubbleRadius > spawnArea.x / 2 ||
                 position.y - bubbleRadius < -spawnArea.y / 2 || position.y + bubbleRadius > spawnArea.y / 2)
             {

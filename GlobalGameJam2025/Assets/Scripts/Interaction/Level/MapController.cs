@@ -22,7 +22,7 @@ namespace BubbleJump.Level
 
         private void Start()
         {
-            Instantiate(LevelChunk, Vector3.zero, Quaternion.identity, chunkParent);
+            //Instantiate(LevelChunk, Vector3.zero, Quaternion.identity, chunkParent);
         }
         void Update()
         {

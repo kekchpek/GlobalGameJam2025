@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3314178686102177893
 Transform:
   m_ObjectHideFlags: 0
@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubble: {fileID: 2330053063520626410, guid: 56486dfbab9838241bbf75ffce0667f6, type: 3}
-  numberOfBubbles: 5
-  minDistance: 4
+  numberOfBubbles: 6
+  minDistance: 3
+  spawnArea: {x: 21, y: 13}
 --- !u!1 &6921197684109898320
 GameObject:
   m_ObjectHideFlags: 0
