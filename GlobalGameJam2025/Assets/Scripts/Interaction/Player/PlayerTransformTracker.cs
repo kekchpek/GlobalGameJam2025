@@ -1,3 +1,4 @@
+using System;
 using BubbleJump.Model.Player;
 using UnityEngine;
 using Zenject;
@@ -10,7 +11,8 @@ namespace BubbleJump.Interaction.Player
         private IPlayerMutableModel _playerMutableModel;
 
         [Inject]
-        public void Construct(IPlayerMutableModel playerMutableModel)
+        public void Construct(
+            IPlayerMutableModel playerMutableModel)
         {
             _playerMutableModel = playerMutableModel;
             if (_playerMutableModel.Transform.Value != null)
@@ -21,6 +23,11 @@ namespace BubbleJump.Interaction.Player
             {
                 _playerMutableModel.SetTransform(transform);
             }
+        }
+
+        private void Update()
+        {
+            _playerMutableModel.SetPlayerHeight(transform.position.y);
         }
 
         private void OnDestroy()

@@ -1,3 +1,4 @@
+using BubbleJump.Model.Player;
 using BubbleJump.Model.SuperJump;
 using UnityEngine;
 using Zenject;
@@ -10,6 +11,7 @@ namespace BubbleJump.Interaction.Player
     {
 
         private ISuperJumpService _superJumpService;
+        private IPlayerModel _playerModel;
         private Rigidbody2D _rigidbody;
 
         private void Awake()
@@ -18,8 +20,11 @@ namespace BubbleJump.Interaction.Player
         }
 
         [Inject]
-        public void Construct(ISuperJumpService superJumpService)
+        public void Construct(
+            ISuperJumpService superJumpService,
+            IPlayerModel playerModel)
         {
+            _playerModel = playerModel;
             _superJumpService = superJumpService;
             _superJumpService.Jumped += OnJump;
         }
@@ -31,7 +36,7 @@ namespace BubbleJump.Interaction.Player
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (_playerModel.Enabled.Value && Input.GetKeyDown(KeyCode.Space))
             {
                 _superJumpService.Charge();
             }

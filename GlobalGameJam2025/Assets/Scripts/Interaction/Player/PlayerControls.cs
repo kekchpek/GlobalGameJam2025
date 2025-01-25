@@ -32,6 +32,8 @@ namespace BubbleJump.Interaction.Player
 
         private void FixedUpdate()
         {
+            if (!_playerModel.Enabled.Value)
+                return;
             if (!_playerModel.IsOnTheGround.Value)
             {
                 if (_gravityBehaviour.TargetTransform)

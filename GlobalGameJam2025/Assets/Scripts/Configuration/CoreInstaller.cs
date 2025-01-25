@@ -7,6 +7,8 @@ using BubbleJump.Model.Player;
 using BubbleJump.Model.Startup;
 using BubbleJump.Model.SuperJump;
 using BubbleJump.UI;
+using BubbleJump.UI.Menu;
+using BubbleJump.UI.Score;
 using BubbleJump.UI.SuperJump;
 using UnityEngine;
 using UnityMVVM;
@@ -26,11 +28,8 @@ namespace BubbleJump.Configuration
         
         public override void InstallBindings()
         {
-            Container.UseAsMvvmContainer(_uiLayers.Select(x => (x.name, x)).ToArray(),
-                new MvvmContainerConfiguration
-                {
-                    
-                });
+            Container.UseAsMvvmContainer(_uiLayers.Select(x => (x.name, x)).ToArray());
+            
             Container.FastBind<IViewsPrefabsProvider, ViewsPrefabsProvider>();
             Container.FastBindMono<ITimeManager, TimeManager>();
             Container.FastBind<IAssetsModel, AddressablesAssetsModel>();
@@ -43,6 +42,8 @@ namespace BubbleJump.Configuration
             Container.FastBind<ISuperJumpMutableModel, ISuperJumpModel, SuperJumpModel>();
             
             Container.InstallView<SuperJumpView, ISuperJumpViewModel, SuperJumpViewModel>();
+            Container.InstallView<ScoreView, IScoreViewModel, ScoreViewModel>();
+            Container.InstallView<MenuView, IMenuViewModel, MenuViewModel>();
             Container.InstallView<EmptyView, IViewModel, ViewModel>(ViewNames.GameScreen);
         }
     }

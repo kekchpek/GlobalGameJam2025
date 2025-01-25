@@ -5,5 +5,9 @@ namespace BubbleJump.Model.Player
 
         void Die();
 
+        void Enable();
+        
+        void Respawn();
+
     }
 }
