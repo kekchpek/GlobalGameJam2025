@@ -14,9 +14,9 @@ namespace BubbleJump.Model.SuperJump
 
         private const float ChargeMinThreshold = 0.9f;
 
-        private const int PerfectClicksPerSecond = 9;
+        private const int PerfectClicksPerSecond = 14;
 
-        private const float MaxStr = 800f;
+        private const float MaxStr = 700f;
         
         private readonly ITimeManager _timeManager;
         private readonly ISuperJumpMutableModel _superJumpModel;
