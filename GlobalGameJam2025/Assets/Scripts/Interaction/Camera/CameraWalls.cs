@@ -23,9 +23,11 @@ namespace BubbleJump.Interaction.Camera
 
         private void Update()
         {
-            var width = _camera.orthographicSize / Screen.height * Screen.width + 0.5f;
-            _leftWall.localPosition = Vector3.left * width - Vector3.forward;
-            _rightWall.localPosition = Vector3.right * width - Vector3.forward;
+            float cameraY = _camera.transform.position.y;
+
+            _leftWall.position = new Vector3(_leftWall.position.x, cameraY, _leftWall.position.z);
+            _rightWall.position = new Vector3(_rightWall.position.x, cameraY, _rightWall.position.z);
         }
+    
     }
 }
