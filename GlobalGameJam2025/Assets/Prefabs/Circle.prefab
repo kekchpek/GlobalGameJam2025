@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 0
+  _velocityTreshold: 1
 --- !u!1 &4804819292890948868
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ namespace BubbleJump
 
         private Animator _animator;
         private TextMeshProUGUI _hpText;
+        [SerializeField]
         private float _velocityTreshold;
 
         private void Start()
@@ -36,7 +37,7 @@ namespace BubbleJump
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.collider.CompareTag("Player")) ;
+            if (collision.collider.CompareTag("Player"))
             {
                 Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
                 Vector2 orgVelocity = rb.linearVelocity;
