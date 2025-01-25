@@ -14,7 +14,7 @@ namespace BubbleJump.Interaction.Player
             _collider.ColliderEntered += OnColliderEntered;
         }
 
-        private void OnColliderEntered(Collision obj)
+        private void OnColliderEntered(Collision2D obj)
         {
             
         }

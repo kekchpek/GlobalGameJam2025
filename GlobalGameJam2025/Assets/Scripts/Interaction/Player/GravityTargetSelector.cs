@@ -28,12 +28,12 @@ namespace BubbleJump.Interaction.Player
             _collider.ColliderEntered += OnCollisionEntered;
         }
 
-        private void OnCollisionEntered(Collision obj)
+        private void OnCollisionEntered(Collision2D obj)
         {
             _gravityBehaviour.SetGravityTarget(obj.transform);
         }
 
-        private void OnTriggerEntered(Collider obj)
+        private void OnTriggerEntered(Collider2D obj)
         {
             _enteredTransforms.Add(obj.transform);
         }
@@ -49,7 +49,7 @@ namespace BubbleJump.Interaction.Player
             }
         }
 
-        private void OnTriggerExited(Collider obj)
+        private void OnTriggerExited(Collider2D obj)
         {
             _enteredTransforms.Remove(obj.transform);
         }
