@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using UnityEngine;
 
 namespace BubbleJump
@@ -7,7 +8,7 @@ namespace BubbleJump
         [SerializeField]
         private Transform _player;
         [SerializeField]
-        private Vector3 offset;
+        private float zOffset;
 
         private void Start()
         {
@@ -16,7 +17,7 @@ namespace BubbleJump
 
         private void Update()
         {
-            transform.position = _player.position + offset;
+            transform.position = new Vector3(transform.position.x, _player.transform.position.y, zOffset);
         }
     }
 }
