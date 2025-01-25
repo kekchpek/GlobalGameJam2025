@@ -9,16 +9,14 @@ namespace BubbleJump.Model.SuperJump
 
         private const long TimeToChargeTicks = TimeSpan.TicksPerSecond * 5;
 
-        private const float ChargeMaxPercentage = 0.2f;
-        private const float ChargeMinPercentage = 0.001f;
+        private const float ChargeMaxPercentage = 0.15f;
+        private const float ChargeMinPercentage = 0.01f;
 
-        private const float ChargeMinThreshold = 0.8f;
+        private const float ChargeMinThreshold = 0.9f;
 
-        private const int PerfectClicksPerSecond = 20;
+        private const int PerfectClicksPerSecond = 9;
 
-        private const float MaxStr = 1000f;
-
-        private const float StrLoss = ChargeMinPercentage * PerfectClicksPerSecond;
+        private const float MaxStr = 800f;
         
         private readonly ITimeManager _timeManager;
         private readonly ISuperJumpMutableModel _superJumpModel;
@@ -39,7 +37,13 @@ namespace BubbleJump.Model.SuperJump
         private void OnTick(long t1, long t2)
         {
             var dt = (t2 - t1) / (float)TimeSpan.TicksPerSecond;
-            _superJumpModel.SetStrength(Mathf.Max(0f, _superJumpModel.Strength.Value - StrLoss * dt));
+            var currentStr = _superJumpModel.Strength.Value;
+            var maxStr = _superJumpModel.MaxStrength.Value;
+            var strPercent = currentStr / maxStr;
+            var strFactor = Mathf.Clamp(strPercent / ChargeMinThreshold, 0f, 1f);
+            var chargeStrPercent = Mathf.Lerp(ChargeMaxPercentage, ChargeMinPercentage, strFactor);
+            var strLoss = Mathf.Pow(chargeStrPercent, 1.3f) * PerfectClicksPerSecond * _superJumpModel.MaxStrength.Value * dt;
+            _superJumpModel.SetStrength(Mathf.Max(0f, _superJumpModel.Strength.Value - strLoss));
         }
 
         public void Charge()
@@ -62,7 +66,7 @@ namespace BubbleJump.Model.SuperJump
 
         private void Jump()
         {
-            Jumped?.Invoke(_superJumpModel.Strength.Value);
+            Jumped?.Invoke(Mathf.Pow(_superJumpModel.Strength.Value, 1.2f));
             _superJumpModel.SetPlannedTime(null);
             _superJumpModel.SetStrength(0f);
         }
