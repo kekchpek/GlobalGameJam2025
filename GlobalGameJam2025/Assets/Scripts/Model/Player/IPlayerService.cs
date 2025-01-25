@@ -9,5 +9,7 @@ namespace BubbleJump.Model.Player
         
         void Respawn();
 
+        void TrackHeight(float height);
+
     }
 }

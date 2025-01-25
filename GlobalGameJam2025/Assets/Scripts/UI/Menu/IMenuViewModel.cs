@@ -10,7 +10,7 @@ namespace BubbleJump.UI.Menu
         
         IBindable<bool> StartLayoutShown { get; }
         
-        IBindable<float> LoseRecord { get; }
+        IBindable<float> LoseHeight { get; }
 
         void OnSpaceClicked();
 

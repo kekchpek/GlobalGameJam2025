@@ -52,6 +52,8 @@ namespace BubbleJump.Model.SuperJump
 
         public void Charge()
         {
+            if (!_playerMutableModel.IsOnTheGround.Value)
+                return;
             if (!_superJumpModel.JumpPlannedTime.Value.HasValue)
             {
                 var plannedTime = _timeManager.CurrentTimestampUtc.Value + TimeToChargeTicks;

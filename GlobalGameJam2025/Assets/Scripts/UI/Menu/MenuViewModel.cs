@@ -13,7 +13,7 @@ namespace BubbleJump.UI.Menu
 
         public IBindable<bool> LoseLayoutShown => _playerModel.IsDead;
         public IBindable<bool> StartLayoutShown { get; }
-        public IBindable<float> LoseRecord => _playerModel.Record;
+        public IBindable<float> LoseHeight => _playerModel.PlayerHeight;
 
         public MenuViewModel(
             IPlayerModel playerModel,

@@ -23,7 +23,7 @@ namespace BubbleJump.UI.Menu
         protected override void OnViewModelSet()
         {
             base.OnViewModelSet();
-            SmartBind(ViewModel!.LoseRecord, x => _recordText.text = x.ToString("0") + "meters");
+            SmartBind(ViewModel!.LoseHeight, x => _recordText.text = x.ToString("0") + "meters");
             SmartBind(ViewModel.StartLayoutShown, UpdateLayout);
             SmartBind(ViewModel.LoseLayoutShown, UpdateLayout);
         }

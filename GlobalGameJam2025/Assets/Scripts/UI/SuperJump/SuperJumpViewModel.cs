@@ -8,18 +8,17 @@ namespace BubbleJump.UI.SuperJump
 {
     public class SuperJumpViewModel : ViewModel, ISuperJumpViewModel
     {
-        private readonly IPlayerModel _playerModel;
-
         public IBindable<bool> IndicatorShown { get; }
-        public IBindable<bool> TutorialShown => _playerModel.IsOnTheGround;
+        public IBindable<bool> TutorialShown { get; }
         public IBindable<float> IndicatorPercent { get; }
 
         public SuperJumpViewModel(
             ISuperJumpModel superJumpModel,
             IPlayerModel playerModel)
         {
-            _playerModel = playerModel;
             IndicatorShown = superJumpModel.Strength.ConvertTo(x => x > 0f);
+            TutorialShown = Bindable.Aggregate(playerModel.IsOnTheGround, playerModel.Enabled,
+                (x, y) => x && y);
             IndicatorPercent =
                 Bindable.Aggregate(
                     superJumpModel.Strength, superJumpModel.MaxStrength, 
