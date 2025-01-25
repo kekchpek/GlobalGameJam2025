@@ -18,7 +18,7 @@ namespace BubbleJump.Level
 
         private float optimizerCooldown;
 
-        private List<GameObject> spawnedChunks = new List<GameObject>();
+        private List<GameObject> spawnedChunks = new();
 
         private void Start()
         {
