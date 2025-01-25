@@ -21,16 +21,16 @@ namespace BubbleJump.Interaction.Bubble
 
         private void Awake()
         {
-            transform.localScale *= Random.Range(1, 3);
+            transform.localScale *= Random.Range(2, 3);
+            _animator = GetComponentInChildren<Animator>();
             _gravityTargetHandle = GetComponent<IGravityTargetHandle>();
         }
 
         private void Start()
         {
             _hpText = GetComponentInChildren<TextMeshPro>();
-            _hp = Random.Range(10, 20);
+            _hp = Random.Range(2, 8);
             UpdateHp();
-            //_animator = GetComponent<Animator>();
         }
 
         private void UpdateHp()
@@ -38,9 +38,9 @@ namespace BubbleJump.Interaction.Bubble
             _hpText.text = _hp.ToString();
             if(_hp <= 0)
             {
-                //_animator.SetBool("Explode",true);
+                _animator.SetTrigger("Burst");
                 _collider.enabled = false;
-                Destroy(gameObject, 0.5f);
+                Destroy(gameObject, 1f);
                 _gravityTargetHandle.SetEnabled(false);
             }
         }
@@ -55,6 +55,7 @@ namespace BubbleJump.Interaction.Bubble
         {
             if (collision.collider.CompareTag("Player"))
             {
+                _animator.SetTrigger("React");
                 _hp--;
                 UpdateHp();
             }

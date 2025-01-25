@@ -24,11 +24,6 @@ namespace BubbleJump.Interaction.Level
             _spawnedChunks.Add(_currentChunk);
         }
 
-        private void Awake()
-        {
-            ResetChunks();
-        }
-
         [Inject]
         public void Construct(IPlayerModel playerModel)
         {
