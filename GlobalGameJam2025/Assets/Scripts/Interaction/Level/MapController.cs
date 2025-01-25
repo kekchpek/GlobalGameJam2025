@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using BubbleJump.Model.Player;
 using UnityEngine;
 using Zenject;
@@ -8,7 +9,7 @@ namespace BubbleJump.Interaction.Level
 {
     public class MapController : MonoBehaviour
     {
-        public GameObject LevelChunk;
+        public GameObject[] LevelChunk;
         public Transform chunkParent;
         
         private GameObject _currentChunk;
@@ -19,7 +20,7 @@ namespace BubbleJump.Interaction.Level
 
         private void ResetChunks()
         {
-            _currentChunk = Instantiate(LevelChunk, Vector3.up * 15f, Quaternion.identity, chunkParent);
+            _currentChunk = Instantiate(LevelChunk[UnityEngine.Random.Range(0,LevelChunk.Count())], Vector3.up * 15f, Quaternion.identity, chunkParent);
             _spawnedChunks.Add(_currentChunk);
         }
 
@@ -70,7 +71,7 @@ namespace BubbleJump.Interaction.Level
         void SpawnChunk()
         {
             var nextChunkPos = _currentChunk.transform.Find("NextChunk").position;
-            _currentChunk = Instantiate(LevelChunk, nextChunkPos, Quaternion.identity, chunkParent);
+            _currentChunk = Instantiate(LevelChunk[UnityEngine.Random.Range(0, LevelChunk.Count())], nextChunkPos, Quaternion.identity, chunkParent);
             _spawnedChunks.Add(_currentChunk);
         }
 

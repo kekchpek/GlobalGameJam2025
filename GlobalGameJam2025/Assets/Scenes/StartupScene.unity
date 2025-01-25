@@ -929,7 +929,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e50e189f1bbb04ca9bfb761503d5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelChunk: {fileID: 6921197684109898320, guid: 8616f756ec9ac104d9ddf5f11e7fd908, type: 3}
+  LevelChunk:
+  - {fileID: 7864940170486735333, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
+  - {fileID: 8306964750140492960, guid: ae515a8009d578844a827802a078476c, type: 3}
+  - {fileID: 7579819176081780907, guid: 802d60b87b5cb6847939f3d97d0b7f56, type: 3}
   chunkParent: {fileID: 667529807}
 --- !u!1 &1120570062
 GameObject:
