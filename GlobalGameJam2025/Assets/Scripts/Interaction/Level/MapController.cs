@@ -15,7 +15,8 @@ namespace BubbleJump.Level
 
         private void Awake()
         {
-            _currentChunk = Instantiate(LevelChunk, Vector3.up * 15f, Quaternion.identity, chunkParent);
+            _currentChunk = Instantiate(LevelChunk, Vector3.up * 20f, Quaternion.identity, chunkParent);
+            _spawnedChunks.Add(_currentChunk);
         }
         
         void Update()

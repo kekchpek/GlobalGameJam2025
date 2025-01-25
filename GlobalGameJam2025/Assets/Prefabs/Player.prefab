@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 4939501848110309388}
   - component: {fileID: 6407037498311340615}
   - component: {fileID: 5728283191379638979}
+  - component: {fileID: 5042978350461786334}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -442,7 +443,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a90395321e3a485e87c1006407715c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.5
+  _speed: 0.8
+--- !u!114 &5042978350461786334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8358357173993234233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c55686da67402180e4c28416e40231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _killingLayout: {fileID: 8381068893415147253}
+  _startKillingThreshold: 30
+  _endKillingThreshold: 15
 --- !u!1 &8381068893415147253
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +470,7 @@ GameObject:
   - component: {fileID: 2947387936465603563}
   - component: {fileID: 1132433337436195549}
   m_Layer: 0
-  m_Name: Player
+  m_Name: BubbleKill
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -469,7 +485,7 @@ Transform:
   m_GameObject: {fileID: 8381068893415147253}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

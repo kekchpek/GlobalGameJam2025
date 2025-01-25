@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using BubbleJump.Interaction.Auxiliary;
 using BubbleJump.Interaction.Bubble;
 using UnityEngine;
@@ -61,6 +62,26 @@ namespace BubbleJump.Interaction.Player
                     _lastSelectedTarget = trs;
                 }
             }
+        }
+
+        public void SelectClosest()
+        {
+            var minDist = float.MaxValue;
+            var minIndex = -1;
+            var arr = _targets.ToArray();
+            for (var i = 0; i < arr.Length; i++)
+            {
+                var target = _targets.ToArray()[i];
+                var dist = (target.Transform.position - transform.position).sqrMagnitude;
+                if (dist < minDist)
+                {
+                    minDist = dist;
+                    minIndex = i;
+                }
+            }
+
+            if (minIndex > -1)
+                _gravityBehaviour.SetGravityTarget(arr[minIndex]);
         }
 
         private void OnTriggerExited(Collider2D obj)

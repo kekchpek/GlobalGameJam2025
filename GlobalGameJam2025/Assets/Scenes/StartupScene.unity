@@ -353,7 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1863257823}
   zOffset: -20
-  yOffset: 10
+  yOffset: 7
 --- !u!114 &330585549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1244,6 +1244,18 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8646298213124374496, guid: 9a24a4c5b9d7a4b23826861c89d4912b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8646298213124374496, guid: 9a24a4c5b9d7a4b23826861c89d4912b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8646298213124374496, guid: 9a24a4c5b9d7a4b23826861c89d4912b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8646298213124374496, guid: 9a24a4c5b9d7a4b23826861c89d4912b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1309,6 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _killingLayout: {fileID: 0}
+  _targetSelector: {fileID: 0}
   _startKillingThreshold: 30
   _endKillingThreshold: 15
 --- !u!1001 &1897706677

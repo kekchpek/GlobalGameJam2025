@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c626c291-b088-4adf-be55-f67ab00a2d20" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Content/PhysicsMaterials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Content/PhysicsMaterials/Walls.physicsMaterial2D" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Content/PhysicsMaterials/Walls.physicsMaterial2D.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Camera.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Camera/CameraWalls.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Camera/CameraWalls.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartupScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartupScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Camera/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/CameraController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Camera/CameraController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Level/ChunkTrigger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Level/ChunkTrigger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Font/BroncoPersonalUse SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Font/BroncoPersonalUse SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Level/BubbleSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Level/BubbleSpawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Level/MapController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Level/MapController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/BubbleKillBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/BubbleKillBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityTargetSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityTargetSelector.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/SuperJump/SuperJumpService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/SuperJump/SuperJumpService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,12 +17,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/nikolaiselivanov/Documents/MY_PROJECTS/GlobalGameJam2025/GlobalGameJam2025/Assets/Scenes/StartupScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/nikolaiselivanov/Documents/MY_PROJECTS/GlobalGameJam2025/GlobalGameJam2025/Assets/Scenes/StartupScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Level/MapController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityTargetSelector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.svermeulen.extenject/Source/Main/DiContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a4afbe3e9a5b486981eaa533ab151f202f200/2b/203997e2/Rigidbody2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Library/Unity/cache/packages/package.openupm.com/com.cysharp.unitask@2.5.10/Runtime/CancellationTokenSourceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Library/Unity/cache/packages/packages.unity.com/com.unity.collab-proxy@2.6.0/Editor/PlasticApp.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Library/Unity/cache/packages/packages.unity.com/com.unity.profiling.core@1.0.2/Runtime/ProfilerMarker1Param.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

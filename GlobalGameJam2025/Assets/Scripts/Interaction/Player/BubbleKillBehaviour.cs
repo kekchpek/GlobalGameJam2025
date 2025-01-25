@@ -1,4 +1,5 @@
 using System;
+using BubbleJump.Interaction.Player;
 using UnityEngine;
 
 namespace BubbleJump.Interaction.Bubble
@@ -14,6 +15,9 @@ namespace BubbleJump.Interaction.Bubble
 
         [SerializeField]
         private GameObject _killingLayout;
+
+        [SerializeField]
+        private GravityTargetSelector _targetSelector;
 
         [SerializeField]
         private float _startKillingThreshold;
@@ -63,6 +67,10 @@ namespace BubbleJump.Interaction.Bubble
             _isKilling = isKilling;
             if (_killingLayout)
                 _killingLayout.SetActive(isKilling);
+            if (!_isKilling && _targetSelector)
+            {
+                _targetSelector.SelectClosest();
+            }
         }
     }
 }

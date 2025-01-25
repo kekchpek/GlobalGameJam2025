@@ -15,9 +15,9 @@ namespace BubbleJump.Level
         private float bubbleRadius;
 
 
-        private void Update()
+        private void Start()
         {
-                spawnBubbles();
+            spawnBubbles();
         }
 
         void spawnBubbles()

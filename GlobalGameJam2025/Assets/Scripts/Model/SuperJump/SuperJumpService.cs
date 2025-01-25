@@ -16,7 +16,7 @@ namespace BubbleJump.Model.SuperJump
 
         private const int PerfectClicksPerSecond = 14;
 
-        private const float MaxStr = 700f;
+        private const float MaxStr = 800f;
         
         private readonly ITimeManager _timeManager;
         private readonly ISuperJumpMutableModel _superJumpModel;
