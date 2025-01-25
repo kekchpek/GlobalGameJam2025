@@ -1,4 +1,4 @@
-using System;
+using BubbleJump.Interaction.Bubble;
 using UnityEngine;
 
 namespace BubbleJump.Interaction.Player
@@ -7,22 +7,22 @@ namespace BubbleJump.Interaction.Player
     public class GravityBehaviour : MonoBehaviour
     {
 
-        private Transform _gravityTarget;
+        private IGravityTarget _gravityTarget;
         private Rigidbody2D _rigidbody;
 
         [SerializeField]
         private Transform _graphics;
 
-        public Transform Target => _gravityTarget;
+        public Transform TargetTransform => _gravityTarget is { IsEnabled: true } ? _gravityTarget.Transform : null;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
         }
 
-        public void SetGravityTarget(Transform target)
+        public void SetGravityTarget(IGravityTarget target)
         {
-            if (target)
+            if (target != null)
             {
                 _rigidbody.gravityScale = 0f;
             }
@@ -35,10 +35,10 @@ namespace BubbleJump.Interaction.Player
 
         private void Update()
         {
-            if (_graphics && Target)
+            if (_graphics && TargetTransform)
             {
                 var pos = transform.position;
-                var targetPos = Target.position;
+                var targetPos = TargetTransform.position;
                 _graphics.position = (pos + targetPos) / 2f;
                 _graphics.right = targetPos - pos;
                 _graphics.localScale = new Vector3((pos - targetPos).magnitude, 0.1f, 1f);
@@ -48,9 +48,9 @@ namespace BubbleJump.Interaction.Player
 
         private void FixedUpdate()
         {
-            if (_gravityTarget)
+            if (TargetTransform)
             {
-                var dir = (_gravityTarget.position - transform.position).normalized;
+                var dir = (TargetTransform.position - transform.position).normalized;
                 _rigidbody.AddForce(dir * (Physics.gravity.magnitude));
             }
             else

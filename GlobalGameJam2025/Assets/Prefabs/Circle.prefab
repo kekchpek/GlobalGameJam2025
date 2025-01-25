@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8178140707131702454}
   - component: {fileID: 6563294503093159880}
   - component: {fileID: 9193685596952558406}
+  - component: {fileID: 7874817186672766380}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Bubbles
@@ -167,7 +168,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 0
-  _velocityTreshold: 1
+  _collider: {fileID: 6563294503093159880}
+  _velocityTreshold: 100
+--- !u!114 &7874817186672766380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2330053063520626410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac192d4b63ce4231a4a536c7a42793cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4804819292890948868
 GameObject:
   m_ObjectHideFlags: 0

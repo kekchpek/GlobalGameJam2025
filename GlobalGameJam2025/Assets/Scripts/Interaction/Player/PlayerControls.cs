@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace BubbleJump.Interaction.Player
@@ -23,11 +22,11 @@ namespace BubbleJump.Interaction.Player
 
         private void FixedUpdate()
         {
-            if (_gravityBehaviour.Target)
+            if (_gravityBehaviour.TargetTransform)
             {
                 var input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
                 var position = transform.position;
-                var currentPos = (position - _gravityBehaviour.Target.position);
+                var currentPos = (position - _gravityBehaviour.TargetTransform.position);
                 var currentPosNorm = currentPos.normalized;
                 var crossIm = Vector3.Cross(currentPosNorm, input).normalized;
                 var rotateDir = Vector3.Cross(crossIm, currentPosNorm).normalized;
