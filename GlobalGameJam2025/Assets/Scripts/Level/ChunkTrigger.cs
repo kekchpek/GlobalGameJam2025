@@ -2,29 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChunkTrigger : MonoBehaviour
+namespace BubbleJump.Level
 {
-    MapController mapController;
-    public GameObject targetMap;
-
-    void Awake()
+    public class ChunkTrigger : MonoBehaviour
     {
-        mapController = FindFirstObjectByType<MapController>();
-    }
+        MapController mapController;
+        public GameObject targetMap;
 
-    private void OnTriggerStay2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
+        void Awake()
         {
-            mapController.currentChunk = targetMap;
+            mapController = FindFirstObjectByType<MapController>();
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.CompareTag("Player"))
+        private void OnTriggerStay2D(Collider2D col)
         {
-            mapController.currentChunk = null;
+            if (col.CompareTag("Player"))
+            {
+                mapController.currentChunk = targetMap;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D col)
+        {
+            if (col.CompareTag("Player"))
+            {
+                mapController.currentChunk = null;
+            }
         }
     }
 }
