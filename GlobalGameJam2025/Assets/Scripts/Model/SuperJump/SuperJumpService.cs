@@ -1,6 +1,7 @@
 using System;
 using BubbleJump.Infrastructure.Time;
 using BubbleJump.Model.Player;
+using Spine;
 using UnityEngine;
 
 namespace BubbleJump.Model.SuperJump

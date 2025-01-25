@@ -12,6 +12,9 @@ namespace BubbleJump.Interaction.Player
 
         [SerializeField]
         private float _speed = 2f;
+
+        [SerializeField]
+        private PlayerAnimator _playerAnimator;
         
         private GravityBehaviour _gravityBehaviour;
         private Rigidbody2D _rigidbody2D;
@@ -34,6 +37,7 @@ namespace BubbleJump.Interaction.Player
         {
             if (!_playerModel.Enabled.Value)
                 return;
+            _playerAnimator.SetSpeed(Input.GetAxis("Horizontal"));
             if (!_playerModel.IsOnTheGround.Value)
             {
                 if (_gravityBehaviour.TargetTransform)

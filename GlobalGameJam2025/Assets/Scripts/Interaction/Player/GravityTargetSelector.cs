@@ -77,6 +77,11 @@ namespace BubbleJump.Interaction.Player
                     _lastSelectedTarget = trs;
                 }
             }
+
+            if (_rigidbody.linearVelocity.sqrMagnitude < 4f && !_playerModel.IsOnTheGround.Value)
+            {
+                SelectClosest();
+            }
         }
 
         private void SelectClosest()
