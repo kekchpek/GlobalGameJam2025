@@ -51,6 +51,7 @@ namespace BubbleJump.Interaction.Bubble
                 if (col.collider.CompareTag("Bubbles"))
                 {
                     var orgVelocity = col.relativeVelocity;
+                    _rigidbody.position = transform.position;
                     _rigidbody.linearVelocity = -orgVelocity;
                     col.collider.GetComponent<BubbleController>().Kill();
                 }

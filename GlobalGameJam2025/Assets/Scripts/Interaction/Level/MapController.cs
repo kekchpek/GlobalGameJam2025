@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TerrainUtils;
 
 namespace BubbleJump.Level
 {
@@ -9,25 +8,19 @@ namespace BubbleJump.Level
         public GameObject LevelChunk;
         public Transform chunkParent;
         public Transform player;
-        public GameObject currentChunk;
+        
+        private GameObject _currentChunk;
+        
+        private readonly List<GameObject> _spawnedChunks = new();
 
-        public float checkerRadius = 2f;
-        public float optimizerCooldownDur;
-        public float maxOptimizeDistance;
-        public LayerMask levelMask;
-
-        private float optimizerCooldown;
-        private GameObject lastChunk;
-
-        private List<GameObject> spawnedChunks = new List<GameObject>();
-
-        private void Start()
+        private void Awake()
         {
-            //Instantiate(LevelChunk, Vector3.zero, Quaternion.identity, chunkParent);
+            _currentChunk = Instantiate(LevelChunk, Vector3.up * 15f, Quaternion.identity, chunkParent);
         }
+        
         void Update()
         {
-            if(currentChunk != null)
+            if(_currentChunk != null)
             {
                 CheckAndSpawnChunks();
                 ChunkOptimizer();
@@ -36,7 +29,7 @@ namespace BubbleJump.Level
 
         void CheckAndSpawnChunks()
         {
-            if (player.transform.position.y <= currentChunk.transform.position.y)
+            while (player.transform.position.y > _currentChunk.transform.position.y - 10f)
             {
                 SpawnChunk();
             }
@@ -44,48 +37,22 @@ namespace BubbleJump.Level
 
         void SpawnChunk()
         {
-            Vector3 nextChunk = currentChunk.transform.Find("NextChunk").position;
-            if(lastChunk != null)
-            {
-                if (lastChunk.transform.position != nextChunk)
-                {
-                    lastChunk = Instantiate(LevelChunk, nextChunk, Quaternion.identity, chunkParent);
-                    spawnedChunks.Add(lastChunk);
-                }
-            }
-            else
-            {
-                lastChunk = Instantiate(LevelChunk, nextChunk, Quaternion.identity, chunkParent);
-                spawnedChunks.Add(lastChunk);
-            }
-            
+            var nextChunkPos = _currentChunk.transform.Find("NextChunk").position;
+            _currentChunk = Instantiate(LevelChunk, nextChunkPos, Quaternion.identity, chunkParent);
+            _spawnedChunks.Add(_currentChunk);
         }
 
         private void ChunkOptimizer()
         {
-            optimizerCooldown -= Time.deltaTime;
-
-            if (optimizerCooldown <= 0f)
+            foreach (var chunk in _spawnedChunks)
             {
-                optimizerCooldown = optimizerCooldownDur;
-            }
-            else
-            {
-                return;
-            }
-
-            foreach (GameObject chunk in spawnedChunks)
-            {
-                float opDist = Vector3.Distance(player.transform.position, chunk.transform.position);
-                if (opDist > maxOptimizeDistance)
+                if (chunk && chunk.transform.position.y < player.transform.position.y - 20f)
                 {
-                    chunk.SetActive(false);
-                }
-                else
-                {
-                    chunk.SetActive(true);
+                    Destroy(chunk);
                 }
             }
+
+            _spawnedChunks.RemoveAll(x => !x);
         }
     }
 }

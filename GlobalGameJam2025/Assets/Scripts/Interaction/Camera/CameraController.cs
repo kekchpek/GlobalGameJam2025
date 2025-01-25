@@ -1,7 +1,6 @@
-using System.Linq.Expressions;
 using UnityEngine;
 
-namespace BubbleJump
+namespace BubbleJump.Interaction.Camera
 {
     public class CameraController : MonoBehaviour
     {
