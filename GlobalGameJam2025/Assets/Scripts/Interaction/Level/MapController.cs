@@ -17,8 +17,8 @@ namespace BubbleJump.Level
         public LayerMask levelMask;
 
         private float optimizerCooldown;
-
         private GameObject lastChunk;
+
         private List<GameObject> spawnedChunks = new List<GameObject>();
 
         private void Start()
