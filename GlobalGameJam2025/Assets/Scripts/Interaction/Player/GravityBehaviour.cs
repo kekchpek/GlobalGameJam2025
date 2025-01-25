@@ -9,6 +9,8 @@ namespace BubbleJump.Interaction.Player
         private Transform _gravityTarget;
         private Rigidbody2D _rigidbody;
 
+        public Transform Target => _gravityTarget;
+
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();

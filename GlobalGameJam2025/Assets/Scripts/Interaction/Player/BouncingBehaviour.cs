@@ -10,6 +10,9 @@ namespace BubbleJump.Interaction.Player
 
         [SerializeField]
         private float _additionSpeed = 2f;
+        
+        [SerializeField]
+        private float _speedFactor = 0.9f;
 
         [SerializeField]
         private PhysicsDispatcher _collider;
@@ -29,7 +32,7 @@ namespace BubbleJump.Interaction.Player
             var outDir = (pos - bubblePos).normalized;
             var speed = col.relativeVelocity;
             var speedOutProjectionMgn = Mathf.Abs(Vector3.Dot(speed,outDir));
-            _rigidbody.linearVelocity = outDir * (speedOutProjectionMgn + _additionSpeed);
+            _rigidbody.linearVelocity = outDir * (speedOutProjectionMgn * _speedFactor + _additionSpeed);
             _rigidbody.totalForce = Vector2.zero;
         }
     }
