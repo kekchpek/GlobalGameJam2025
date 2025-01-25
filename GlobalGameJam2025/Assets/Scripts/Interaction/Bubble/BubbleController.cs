@@ -16,7 +16,7 @@ namespace BubbleJump.Interaction.Bubble
         private IGravityTargetHandle _gravityTargetHandle;
 
         private Animator _animator;
-        private TextMeshProUGUI _hpText;
+        private TextMeshPro _hpText;
         [SerializeField]
         private float _velocityTreshold;
 
@@ -27,7 +27,7 @@ namespace BubbleJump.Interaction.Bubble
 
         private void Start()
         {
-            _hpText = GetComponentInChildren<TextMeshProUGUI>();
+            _hpText = GetComponentInChildren<TextMeshPro>();
             _hp = Random.Range(3, 7);
             UpdateHp();
             //_animator = GetComponent<Animator>();
