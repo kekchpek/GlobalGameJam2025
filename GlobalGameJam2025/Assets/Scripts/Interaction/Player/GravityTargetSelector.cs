@@ -45,6 +45,7 @@ namespace BubbleJump.Interaction.Player
                 if (_lastSelectedTargetPosition.HasValue && trs.position.y > _lastSelectedTargetPosition.Value.y)
                 {
                     _gravityBehaviour.SetGravityTarget(trs);
+                    _lastSelectedTargetPosition = trs.position;
                 }
             }
         }

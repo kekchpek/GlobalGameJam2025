@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8646298213124374496}
@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 3564943212142991917}
   - component: {fileID: 2712879685100540709}
   - component: {fileID: 4939501848110309388}
+  - component: {fileID: 6407037498311340615}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -146,8 +147,8 @@ Rigidbody2D:
     m_Bits: 64
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!58 &2613536321459846776
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -290,3 +291,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tagFilter: Bubbles
+--- !u!114 &6407037498311340615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8358357173993234233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550be6f90a234d8aa03b66cbf0435c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _additionSpeed: 0.1
+  _collider: {fileID: 4939501848110309388}
