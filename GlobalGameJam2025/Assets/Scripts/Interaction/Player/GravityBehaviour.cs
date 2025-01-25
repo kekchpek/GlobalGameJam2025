@@ -32,7 +32,7 @@ namespace BubbleJump.Interaction.Player
             if (_gravityTarget)
             {
                 var dir = (_gravityTarget.position - transform.position).normalized;
-                _rigidbody.AddForce(dir * (Physics.gravity.magnitude * Time.fixedTime));
+                _rigidbody.AddForce(dir * (Physics.gravity.magnitude * Time.fixedDeltaTime));
             }
             else
             {

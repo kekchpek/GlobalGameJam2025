@@ -30,6 +30,7 @@ namespace BubbleJump.Interaction.Player
             var speed = col.relativeVelocity;
             var speedOutProjectionMgn = Mathf.Abs(Vector3.Dot(speed,outDir));
             _rigidbody.linearVelocity = outDir * (speedOutProjectionMgn + _additionSpeed);
+            _rigidbody.totalForce = Vector2.zero;
         }
     }
 }
