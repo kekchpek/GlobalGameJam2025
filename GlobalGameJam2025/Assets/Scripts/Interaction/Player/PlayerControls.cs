@@ -37,7 +37,8 @@ namespace BubbleJump.Interaction.Player
         {
             if (!_playerModel.Enabled.Value)
                 return;
-            _playerAnimator.SetSpeed(Input.GetAxis("Horizontal"));
+            if (_playerAnimator)
+                _playerAnimator.SetSpeed(Input.GetAxis("Horizontal"));
             if (!_playerModel.IsOnTheGround.Value)
             {
                 if (_gravityBehaviour.TargetTransform)

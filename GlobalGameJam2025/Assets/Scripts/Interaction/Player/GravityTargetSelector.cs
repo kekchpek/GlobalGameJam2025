@@ -23,7 +23,7 @@ namespace BubbleJump.Interaction.Player
         [SerializeField]
         private PhysicsDispatcher _collider;
 
-        private bool _selectClosestOnce = true;
+        private bool _selectClosestOnce;
 
 
         private readonly HashSet<IGravityTarget> _targets = new();
@@ -76,6 +76,11 @@ namespace BubbleJump.Interaction.Player
                     _gravityBehaviour.SetGravityTarget(trs);
                     _lastSelectedTarget = trs;
                 }
+            }
+
+            if (_rigidbody.linearVelocity.sqrMagnitude > 100f)
+            {
+                _selectClosestOnce = true;
             }
 
             if (_rigidbody.linearVelocity.sqrMagnitude < 4f && !_playerModel.IsOnTheGround.Value)
