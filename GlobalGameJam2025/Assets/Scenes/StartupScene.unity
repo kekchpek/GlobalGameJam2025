@@ -934,16 +934,6 @@ MonoBehaviour:
   - {fileID: 8306964750140492960, guid: ae515a8009d578844a827802a078476c, type: 3}
   - {fileID: 8306964750140492960, guid: bb57cddb718ce6b4f915388acd2787d9, type: 3}
   - {fileID: 8306964750140492960, guid: 8d2ba815c0cf8d240b3fc2cbf55bca74, type: 3}
-  - {fileID: 8306964750140492960, guid: abff40355ac2c94438a8a31fb6892ee5, type: 3}
-  - {fileID: 8306964750140492960, guid: 6d0f60a249b58bb4b9e9a8e83d2e84ec, type: 3}
-  - {fileID: 8306964750140492960, guid: cec7dfb4b490808449b30a2263331bb8, type: 3}
-  - {fileID: 8306964750140492960, guid: ee7a4094c0507ad47a2680d7af02542b, type: 3}
-  - {fileID: 8306964750140492960, guid: e662192e15d9745438497d03eaac1ca6, type: 3}
-  - {fileID: 8306964750140492960, guid: 525dbff42a427f04db62df54cc92feae, type: 3}
-  - {fileID: 8306964750140492960, guid: a52bae4862433994eb98eccdf84ab8f4, type: 3}
-  - {fileID: 8306964750140492960, guid: 0b95d7a6fd6f0f842af83faac2ddd75d, type: 3}
-  - {fileID: 8306964750140492960, guid: 3e9390ad57fe9f14bbc3980600fbbd0f, type: 3}
-  - {fileID: 8306964750140492960, guid: 6fc0bfa719e541742b6e4c12d37090bb, type: 3}
   chunkParent: {fileID: 667529807}
 --- !u!1 &1120570062
 GameObject:
