@@ -29,7 +29,7 @@ namespace BubbleJump.Interaction.Bubble
         private void Start()
         {
             _hpText = GetComponentInChildren<TextMeshPro>();
-            _hp = Random.Range(4, 10);
+            _hp = Mathf.Max(2, (int)(Random.Range(4, 10) * ((700f - transform.position.y) / 700f)));
             UpdateHp();
         }
 

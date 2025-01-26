@@ -100,9 +100,6 @@ namespace BubbleJump.Interaction.Player
             }
             else if (!target)
             {
-                var currentUp = trs.up;
-                var upDelta = Vector3.Cross(currentUp, v);
-                SetSpeed(-upDelta.z);
                 trs.up = v;
                 ActivateState(State.Up);
                 if (v.magnitude > 20f)
