@@ -7,8 +7,12 @@ namespace BubbleJump.Interaction.Player
     public class PlayerFallBehaviour : MonoBehaviour
     {
 
+        [SerializeField]
+        private Animator _animator;
+         
         private IPlayerService _playerService;
         private IPlayerModel _playerModel;
+        private static readonly int DeathSpeed = Animator.StringToHash("DeathSpeed");
 
         [Inject]
         public void Construct(
@@ -26,7 +30,9 @@ namespace BubbleJump.Interaction.Player
                 if (!_playerModel.IsOnTheGround.Value)
                 {
                     _playerService.Die();
-                    Destroy(gameObject);
+                    if (_animator)
+                        _animator.SetFloat(DeathSpeed, collision.relativeVelocity.magnitude);
+                    Destroy(gameObject, 1f);
                 }
             }
         }

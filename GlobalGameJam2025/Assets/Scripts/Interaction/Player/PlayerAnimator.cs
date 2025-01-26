@@ -39,6 +39,7 @@ namespace BubbleJump.Interaction.Player
         private static readonly int Flip = Animator.StringToHash("Flip");
         private static readonly int Jump = Animator.StringToHash("Jump");
         private static readonly int Down = Animator.StringToHash("Down");
+        private static readonly int Death = Animator.StringToHash("Death");
 
         [Inject]
         public void Construct(IPlayerModel playerModel)
@@ -81,7 +82,11 @@ namespace BubbleJump.Interaction.Player
             var target = _gravityBehaviour.TargetTransform;
             var trs = transform;
             _state = 0;
-            if (_playerModel.IsOnTheGround.Value)
+            if (_playerModel.IsDead.Value)
+            {
+                _animator.SetTrigger(Death);
+            }
+            else if (_playerModel.IsOnTheGround.Value)
             {
                 ActivateState(State.Grounded);
                 trs.up = Vector3.up;
