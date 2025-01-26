@@ -35,20 +35,21 @@ namespace BubbleJump.Interaction.Bubble
 
         private void UpdateHp()
         {
-            _hpText.text = _hp.ToString();
+            
             if(_hp <= 0)
             {
-                _animator.SetTrigger("Burst");
-                _collider.enabled = false;
-                Destroy(gameObject, 1f);
-                _gravityTargetHandle.SetEnabled(false);
+                Kill();
             }
+            else
+                _hpText.text = _hp.ToString();
         }
 
         public void Kill()
         {
-            _hp = 0;
-            UpdateHp();
+            _animator.SetTrigger("Burst");
+            _collider.enabled = false;
+            Destroy(gameObject, 1f);
+            _gravityTargetHandle.SetEnabled(false);
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -57,7 +58,7 @@ namespace BubbleJump.Interaction.Bubble
             {
                
                 _hp--;
-                if( _hp > 0)
+                if( _hp != 0)
                 {
                     _animator.SetTrigger("React");
                 }
