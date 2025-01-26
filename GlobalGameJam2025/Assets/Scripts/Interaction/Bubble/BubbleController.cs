@@ -55,8 +55,12 @@ namespace BubbleJump.Interaction.Bubble
         {
             if (collision.collider.CompareTag("Player"))
             {
-                _animator.SetTrigger("React");
+               
                 _hp--;
+                if( _hp > 0)
+                {
+                    _animator.SetTrigger("React");
+                }
                 UpdateHp();
             }
             

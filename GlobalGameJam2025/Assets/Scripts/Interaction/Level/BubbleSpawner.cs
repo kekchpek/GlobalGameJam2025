@@ -23,7 +23,19 @@ namespace BubbleJump.Level
             foreach(var spawnPoint in spawnPoints)
             {
                 GameObject bubble = Instantiate(bubblePrefabs[Random.Range(0, bubblePrefabs.Count())], spawnPoint.transform.position, Quaternion.identity);
-                bubble.transform.localScale = Vector3.one * Random.Range(2, 3);
+
+                int chance = Random.Range(0, 101);
+                int radius;
+                if (chance <= 20)
+                {
+                    radius = 1;
+                }
+                else if (chance <= 60)
+                {
+                    radius = 2;
+                }
+                else radius = 3;
+                bubble.transform.localScale = Vector3.one * radius;
                 bubble.transform.SetParent(spawnPoint.transform);
             }
         }
