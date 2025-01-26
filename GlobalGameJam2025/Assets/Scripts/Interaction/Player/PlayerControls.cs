@@ -55,12 +55,18 @@ namespace BubbleJump.Interaction.Player
                     var crossIm = Vector3.Cross(currentPosNorm, input).normalized;
                     var rotateDir = Vector3.Cross(crossIm, currentPosNorm).normalized;
 
-                    var d = rotateDir * (_speed * currentPos.magnitude);
 
                     var linear = _rigidbody2D.linearVelocity;
+                    var d = rotateDir * (_speed * linear.magnitude);
                     var linearY = Vector3.Dot(linear, -currentPosNorm);
 
                     _rigidbody2D.linearVelocity = -currentPosNorm * linearY + d;
+                }
+                else
+                {
+                    var v = _rigidbody2D.linearVelocity;
+                    v.x = Input.GetAxis("Horizontal") * 8f;
+                    _rigidbody2D.linearVelocity = v;
                 }
             }
             else if (_superJumpModel.Strength.Value <= 0f)

@@ -37,6 +37,7 @@ namespace BubbleJump.Model.Player
 
         public void Respawn()
         {
+            _playerMutableModel.SetPlayerHeight(0f);
             _playerMutableModel.SetPlayerOnTheGround(true);
             _playerMutableModel.SetDead(false);
         }
