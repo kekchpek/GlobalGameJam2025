@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c626c291-b088-4adf-be55-f67ab00a2d20" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam2025/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Font/BroncoPersonalUse SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Font/BroncoPersonalUse SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero.atlas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero.atlas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero_Atlas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero_Atlas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero_Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero_Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Hero/Jam_Hero/Jam_Hero_Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartupScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartupScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityTargetSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityTargetSelector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerAnimator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Player/PlayerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Player/PlayerService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.muse.common/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.muse.common/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,11 +28,14 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Users/nikolaiselivanov/Documents/MY_PROJECTS/GlobalGameJam2025/GlobalGameJam2025/Assets/Scenes/StartupScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/nikolaiselivanov/Documents/MY_PROJECTS/GlobalGameJam2025/GlobalGameJam2025/Assets/Scenes/StartupScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/nikolaiselivanov/Documents/MY_PROJECTS/GlobalGameJam2025/GlobalGameJam2025/Assets/Scenes/StartupScene.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/nikolaiselivanov/Documents/MY_PROJECTS/GlobalGameJam2025/GlobalGameJam2025/Assets/Scenes/StartupScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Level/MapController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityTargetSelector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.svermeulen.extenject/Source/Main/DiContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.svermeulen.extenject/Source/Providers/CachedProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6fa6251e571244b9b8166c44ace55ab934600/3b/33b93983/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a4afbe3e9a5b486981eaa533ab151f202f200/2b/203997e2/Rigidbody2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Library/Unity/cache/packages/package.openupm.com/com.cysharp.unitask@2.5.10/Runtime/CancellationTokenSourceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Library/Unity/cache/packages/packages.unity.com/com.unity.collab-proxy@2.6.0/Editor/PlasticApp.cs" root0="SKIP_HIGHLIGHTING" />
@@ -76,10 +94,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="44843">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="44843" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />

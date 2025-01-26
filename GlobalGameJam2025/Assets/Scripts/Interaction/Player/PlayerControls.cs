@@ -60,7 +60,9 @@ namespace BubbleJump.Interaction.Player
             }
             else
             {
-                _rigidbody2D.linearVelocity = Vector2.right * (Input.GetAxis("Horizontal") * 3f);
+                var v = _rigidbody2D.linearVelocity;
+                v.x = Input.GetAxis("Horizontal") * 3f;
+                _rigidbody2D.linearVelocity = v;
             }
         }
     }

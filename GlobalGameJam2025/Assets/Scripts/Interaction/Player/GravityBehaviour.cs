@@ -22,6 +22,8 @@ namespace BubbleJump.Interaction.Player
 
         public void SetGravityTarget(IGravityTarget target)
         {
+            if (target == _gravityTarget)
+                return;
             if (target != null)
             {
                 _rigidbody.gravityScale = 0f;
