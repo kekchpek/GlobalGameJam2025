@@ -8,6 +8,7 @@ using BubbleJump.Model.Startup;
 using BubbleJump.Model.SuperJump;
 using BubbleJump.UI;
 using BubbleJump.UI.Menu;
+using BubbleJump.UI.MobileWarning;
 using BubbleJump.UI.Score;
 using BubbleJump.UI.SuperJump;
 using UnityEngine;
@@ -44,6 +45,7 @@ namespace BubbleJump.Configuration
             Container.InstallView<SuperJumpView, ISuperJumpViewModel, SuperJumpViewModel>();
             Container.InstallView<ScoreView, IScoreViewModel, ScoreViewModel>();
             Container.InstallView<MenuView, IMenuViewModel, MenuViewModel>();
+            Container.InstallView<MobileWarningView, IViewModel, ViewModel>();
             Container.InstallView<EmptyView, IViewModel, ViewModel>(ViewNames.GameScreen);
         }
     }
