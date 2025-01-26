@@ -25,12 +25,12 @@ namespace BubbleJump.Level
                 GameObject bubble = Instantiate(bubblePrefabs[Random.Range(0, bubblePrefabs.Count())], spawnPoint.transform.position, Quaternion.identity);
 
                 int chance = Random.Range(0, 101);
-                int radius;
+                float radius;
                 if (chance <= 20)
                 {
-                    radius = 1;
+                    radius = 1.5f;
                 }
-                else radius = 2;
+                else radius = 2f;
                 bubble.transform.localScale = Vector3.one * radius;
                 bubble.transform.SetParent(spawnPoint.transform);
             }
