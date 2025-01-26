@@ -1,3 +1,4 @@
+using BubbleJump.Interaction.Rip;
 using BubbleJump.Model.Player;
 using UnityEngine;
 using Zenject;
@@ -9,6 +10,9 @@ namespace BubbleJump.Interaction.Player
 
         [SerializeField]
         private Animator _animator;
+        
+        [SerializeField]
+        private RipBehaviour _ripPrefab;
          
         private IPlayerService _playerService;
         private IPlayerModel _playerModel;
@@ -30,6 +34,8 @@ namespace BubbleJump.Interaction.Player
                 if (!_playerModel.IsOnTheGround.Value)
                 {
                     _playerService.Die();
+                    if (_ripPrefab)
+                        Instantiate(_ripPrefab, transform.position, Quaternion.identity).SetTitle(_playerModel.PlayerHeight.Value.ToString("0"));
                     if (_animator)
                         _animator.SetFloat(DeathSpeed, collision.relativeVelocity.magnitude);
                     Destroy(gameObject, 1f);

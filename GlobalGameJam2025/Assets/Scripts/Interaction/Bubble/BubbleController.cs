@@ -29,7 +29,7 @@ namespace BubbleJump.Interaction.Bubble
         private void Start()
         {
             _hpText = GetComponentInChildren<TextMeshPro>();
-            _hp = Random.Range(2, 8);
+            _hp = Random.Range(4, 10);
             UpdateHp();
         }
 

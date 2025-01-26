@@ -5380,6 +5380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 993820748304682446}
+  _ripPrefab: {fileID: 8283183188294181267, guid: 6331abfb0af25474987ced38d1aa1f6b, type: 3}
 --- !u!114 &8453184285353011590
 MonoBehaviour:
   m_ObjectHideFlags: 0
