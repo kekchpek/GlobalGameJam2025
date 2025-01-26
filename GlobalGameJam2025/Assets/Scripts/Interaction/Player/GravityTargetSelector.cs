@@ -23,6 +23,7 @@ namespace BubbleJump.Interaction.Player
         [SerializeField]
         private PhysicsDispatcher _collider;
 
+        private bool _closestSelected;
         private bool _selectClosestOnce;
 
 
@@ -78,7 +79,7 @@ namespace BubbleJump.Interaction.Player
                 }
             }
 
-            if (_rigidbody.linearVelocity.sqrMagnitude > 100f)
+            if (_rigidbody.linearVelocity.sqrMagnitude > 100f && !_closestSelected)
             {
                 _selectClosestOnce = true;
             }
@@ -93,6 +94,7 @@ namespace BubbleJump.Interaction.Player
         {
             if (!_selectClosestOnce)
                 return;
+            _closestSelected = true;
             _selectClosestOnce = false;
             var minDist = float.MaxValue;
             var minIndex = -1;

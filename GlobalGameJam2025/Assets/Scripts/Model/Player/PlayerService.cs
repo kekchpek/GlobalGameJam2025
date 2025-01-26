@@ -1,4 +1,5 @@
 
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace BubbleJump.Model.Player
@@ -28,8 +29,9 @@ namespace BubbleJump.Model.Player
             }
         }
 
-        public void Enable()
+        public async void Enable()
         {
+            await UniTask.Delay(1000);
             _playerMutableModel.SetEnabled(true);
         }
 
