@@ -16,7 +16,7 @@ namespace BubbleJump.UI.Score
         protected override void OnViewModelSet()
         {
             base.OnViewModelSet();
-            SmartBind(ViewModel!.Score, x => _score.text = x.ToString("0") + "meters");
+            SmartBind(ViewModel!.Score, x => _score.text = x.ToString("0") + " meters");
             SmartBind(ViewModel!.Record, x => _record.text = "record: " + x.ToString("0"));
         }
     }
