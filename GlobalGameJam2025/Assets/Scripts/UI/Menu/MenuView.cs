@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityMVVM;
@@ -7,6 +8,9 @@ namespace BubbleJump.UI.Menu
 {
     public class MenuView : ViewBehaviour<IMenuViewModel>
     {
+
+        [SerializeField]
+        private CanvasGroup _canvasGroup;
 
         [SerializeField]
         private TMP_Text _recordText;
@@ -30,6 +34,7 @@ namespace BubbleJump.UI.Menu
 
         private void UpdateLayout()
         {
+            _canvasGroup.alpha = 1f;
             _startLayout.SetActive(ViewModel!.StartLayoutShown.Value);
             _loseLayout.SetActive(ViewModel!.LoseLayoutShown.Value);
             _bg.SetActive(ViewModel!.StartLayoutShown.Value || ViewModel!.LoseLayoutShown.Value);
@@ -39,6 +44,7 @@ namespace BubbleJump.UI.Menu
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                _canvasGroup.DOFade(0f, 1f);
                 ViewModel?.OnSpaceClicked();
             }
         }

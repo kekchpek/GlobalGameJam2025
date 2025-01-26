@@ -52,14 +52,15 @@ namespace BubbleJump.Interaction.Player
                     var position = transform.position;
                     var currentPos = (position - _gravityBehaviour.TargetTransform.position);
                     var currentPosNorm = currentPos.normalized;
-                    var crossIm = Vector3.Cross(currentPosNorm, input).normalized;
-                    var rotateDir = Vector3.Cross(crossIm, currentPosNorm).normalized;
-
-
+                    var crossIm = Vector3.Cross(currentPosNorm, input);
                     var linear = _rigidbody2D.linearVelocity;
-                    var d = rotateDir * (_speed * linear.magnitude);
+                    var d = Vector3.zero;
+                    if (crossIm.sqrMagnitude > 0.01f)
+                    {
+                        var rotateDir = Vector3.Cross(crossIm, currentPosNorm).normalized;
+                        d = rotateDir * (_speed * linear.magnitude);
+                    }
                     var linearY = Vector3.Dot(linear, -currentPosNorm);
-
                     _rigidbody2D.linearVelocity = -currentPosNorm * linearY + d;
                 }
                 else
