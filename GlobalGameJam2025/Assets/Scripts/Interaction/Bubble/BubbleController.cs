@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -6,11 +7,18 @@ namespace BubbleJump.Interaction.Bubble
 {
     public class BubbleController : MonoBehaviour
     {
+
+        [SerializeField]
+        private List<AudioClip> _killClips = new();
+        
         [SerializeField]
         private int _hp;
 
         [SerializeField]
         private Collider2D _collider;
+
+        [SerializeField]
+        private AudioSource _audioSource;
 
         private IGravityTargetHandle _gravityTargetHandle;
 
@@ -47,6 +55,8 @@ namespace BubbleJump.Interaction.Bubble
         public void Kill()
         {
             _animator.SetTrigger("Burst");
+            _audioSource.clip = _killClips[Random.Range(0, _killClips.Count)];
+            _audioSource.Play();
             _collider.enabled = false;
             Destroy(gameObject, 1f);
             _gravityTargetHandle.SetEnabled(false);
