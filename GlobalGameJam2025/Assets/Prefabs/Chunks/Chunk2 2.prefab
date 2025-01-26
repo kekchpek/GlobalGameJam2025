@@ -50,15 +50,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4794929408585137598, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.341
+      value: 0.263
       objectReference: {fileID: 0}
     - target: {fileID: 4794929408585137598, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.253
+      value: -0.182
       objectReference: {fileID: 0}
     - target: {fileID: 4942168114546841134, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
       propertyPath: spawnPoints.Array.size
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4942168114546841134, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
+      propertyPath: 'spawnPoints.Array.data[2]'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4942168114546841134, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
       propertyPath: 'spawnPoints.Array.data[3]'
@@ -82,11 +86,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6909864563456185278, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.052
+      value: 0.039
       objectReference: {fileID: 0}
     - target: {fileID: 6909864563456185278, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.105
+      value: -0.208
       objectReference: {fileID: 0}
     - target: {fileID: 7864940170486735333, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
       propertyPath: m_Name
@@ -139,6 +143,7 @@ PrefabInstance:
     - {fileID: 6501904267353146928, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
     - {fileID: 4809410572784045415, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
     - {fileID: 872341439305332229, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
+    - {fileID: 8212097705530548319, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
