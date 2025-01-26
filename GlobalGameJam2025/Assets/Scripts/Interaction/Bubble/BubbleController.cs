@@ -21,7 +21,7 @@ namespace BubbleJump.Interaction.Bubble
 
         private void Awake()
         {
-            transform.localScale *= Random.Range(2, 3);
+            
             _animator = GetComponentInChildren<Animator>();
             _gravityTargetHandle = GetComponent<IGravityTargetHandle>();
         }
