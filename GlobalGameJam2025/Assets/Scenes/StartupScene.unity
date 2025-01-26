@@ -702,6 +702,7 @@ MonoBehaviour:
   _uiLayers:
   - {fileID: 1836858472}
   - {fileID: 1137451023}
+  _gameScreen: {fileID: 1324994023708564844, guid: 31eed5c38de81483d88b6b9ce6cdd141, type: 3}
 --- !u!1 &667529806
 GameObject:
   m_ObjectHideFlags: 0

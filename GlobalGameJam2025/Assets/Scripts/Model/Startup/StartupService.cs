@@ -21,7 +21,6 @@ namespace BubbleJump.Model.Startup
         
         public async void Startup()
         {
-            await _assetsModel.CacheAsset<GameObject>(ViewNames.GameScreen);
             await _viewManager.Open(LayerNames.Screen, ViewNames.GameScreen);
         }
         

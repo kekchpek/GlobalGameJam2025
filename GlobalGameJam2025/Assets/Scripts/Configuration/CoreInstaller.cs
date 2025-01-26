@@ -26,6 +26,9 @@ namespace BubbleJump.Configuration
 
         [SerializeField]
         private List<Transform> _uiLayers = new();
+
+        [SerializeField]
+        private GameObject _gameScreen;
         
         public override void InstallBindings()
         {
@@ -46,7 +49,7 @@ namespace BubbleJump.Configuration
             Container.InstallView<ScoreView, IScoreViewModel, ScoreViewModel>();
             Container.InstallView<MenuView, IMenuViewModel, MenuViewModel>();
             Container.InstallView<MobileWarningView, IViewModel, ViewModel>();
-            Container.InstallView<EmptyView, IViewModel, ViewModel>(ViewNames.GameScreen);
+            Container.InstallView<EmptyView, IViewModel, ViewModel>(ViewNames.GameScreen, _gameScreen);
         }
     }
 }

@@ -27,7 +27,11 @@ namespace BubbleJump.UI.MobileWarning
 
         private void Awake()
         {
-            _copyButton.onClick.AddListener(() => GUIUtility.systemCopyBuffer = Link);
+            _copyButton.onClick.AddListener(() =>
+            {
+                GUIUtility.systemCopyBuffer = Link;
+                LaughGameWeb.CopyToClipboard();
+            });
         }
 
         private void Update()

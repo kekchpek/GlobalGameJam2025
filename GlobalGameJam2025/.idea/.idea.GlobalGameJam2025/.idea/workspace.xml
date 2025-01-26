@@ -2,20 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c626c291-b088-4adf-be55-f67ab00a2d20" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/LaughGameWebNative.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGame.WebNative.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGame.WebNative.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGame.jslib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGame.jslib.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGameWeb.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGameWeb.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MobileWarning.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MobileWarning/MobileWarningView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MobileWarning/MobileWarningView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/link.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/link.xml.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/LaughGame.jslib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/LaughGame.jslib.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam2025/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Views/GameScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Views/GameScreen.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Graphics/Font/BroncoPersonalUse SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Font/BroncoPersonalUse SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BubbleJump.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BubbleJump.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LaughGameWebNative.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LaughGameWebNative.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGame.WebNative.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LaughGameWebNative/LaughGame.WebNative.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGame.WebNative.asmdef.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LaughGameWebNative/LaughGame.WebNative.asmdef.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGame.jslib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGame.jslib.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGameWeb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LaughGameWebNative/LaughGameWeb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LaughGameWebNative/LaughGameWeb.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/LaughGameWebNative/LaughGameWeb.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartupScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartupScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Configuration/CoreInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Configuration/CoreInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Model/Startup/StartupService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Model/Startup/StartupService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MobileWarning/MobileWarningView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MobileWarning/MobileWarningView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
@@ -32,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Level/MapController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interaction/Player/GravityTargetSelector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.svermeulen.extenject/Source/Internal/Assert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.svermeulen.extenject/Source/Main/DiContainer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.svermeulen.extenject/Source/Providers/CachedProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6fa6251e571244b9b8166c44ace55ab934600/3b/33b93983/Animator.cs" root0="SKIP_HIGHLIGHTING" />
