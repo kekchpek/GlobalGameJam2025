@@ -1,4 +1,5 @@
 using BubbleJump.Model.Player;
+using BubbleJump.Model.SuperJump;
 using UnityEngine;
 using Zenject;
 
@@ -20,6 +21,7 @@ namespace BubbleJump.Interaction.Player
         private Rigidbody2D _rigidbody2D;
 
         private IPlayerModel _playerModel;
+        private ISuperJumpModel _superJumpModel;
         
         private void Awake()
         {
@@ -28,8 +30,11 @@ namespace BubbleJump.Interaction.Player
         }
 
         [Inject]
-        public void Construct(IPlayerModel playerModel)
+        public void Construct(
+            IPlayerModel playerModel,
+            ISuperJumpModel superJumpModel)
         {
+            _superJumpModel = superJumpModel;
             _playerModel = playerModel;
         }
 
@@ -58,7 +63,7 @@ namespace BubbleJump.Interaction.Player
                     _rigidbody2D.linearVelocity = -currentPosNorm * linearY + d;
                 }
             }
-            else
+            else if (_superJumpModel.Strength.Value <= 0f)
             {
                 var v = _rigidbody2D.linearVelocity;
                 v.x = Input.GetAxis("Horizontal") * 3f;

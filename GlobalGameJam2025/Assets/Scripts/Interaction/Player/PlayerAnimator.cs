@@ -1,5 +1,6 @@
 using System;
 using BubbleJump.Model.Player;
+using BubbleJump.Model.SuperJump;
 using UnityEngine;
 using Zenject;
 
@@ -28,6 +29,7 @@ namespace BubbleJump.Interaction.Player
         private GravityBehaviour _gravityBehaviour;
 
         private IPlayerModel _playerModel;
+        private ISuperJumpModel _superJumpModel;
 
         [SerializeField]
         private Animator _animator;
@@ -40,10 +42,14 @@ namespace BubbleJump.Interaction.Player
         private static readonly int Jump = Animator.StringToHash("Jump");
         private static readonly int Down = Animator.StringToHash("Down");
         private static readonly int Death = Animator.StringToHash("Death");
+        private static readonly int JumpForce = Animator.StringToHash("JumpForce");
 
         [Inject]
-        public void Construct(IPlayerModel playerModel)
+        public void Construct(
+            IPlayerModel playerModel,
+            ISuperJumpModel superJumpModel)
         {
+            _superJumpModel = superJumpModel;
             _playerModel = playerModel;
             _playerModel.IsOnTheGround.Bind(OnPlayerGrounded);
         }
@@ -82,6 +88,7 @@ namespace BubbleJump.Interaction.Player
             var target = _gravityBehaviour.TargetTransform;
             var trs = transform;
             _state = 0;
+            _animator.SetFloat(JumpForce, _superJumpModel.Strength.Value);
             if (_playerModel.IsDead.Value)
             {
                 _animator.SetTrigger(Death);

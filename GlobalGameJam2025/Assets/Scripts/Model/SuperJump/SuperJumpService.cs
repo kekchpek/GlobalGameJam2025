@@ -73,7 +73,7 @@ namespace BubbleJump.Model.SuperJump
 
         private void Jump()
         {
-            Jumped?.Invoke(Mathf.Pow(_superJumpModel.Strength.Value, 1.2f));
+            Jumped?.Invoke(Mathf.Pow(_superJumpModel.Strength.Value, 1.2f) + 5f);
             _superJumpModel.SetPlannedTime(null);
             _superJumpModel.SetStrength(0f);
             _playerMutableModel.SetPlayerOnTheGround(false);
