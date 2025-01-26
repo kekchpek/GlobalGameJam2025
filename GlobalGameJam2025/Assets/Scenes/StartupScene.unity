@@ -931,9 +931,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelChunk:
   - {fileID: 7864940170486735333, guid: 3f47ea20ae62ece4ebb7314b39ac456f, type: 3}
+  - {fileID: 8306964750140492960, guid: 9f453c953346dbb4a9edec7ee1d858ac, type: 3}
   - {fileID: 8306964750140492960, guid: ae515a8009d578844a827802a078476c, type: 3}
+  - {fileID: 8306964750140492960, guid: 9f453c953346dbb4a9edec7ee1d858ac, type: 3}
   - {fileID: 8306964750140492960, guid: bb57cddb718ce6b4f915388acd2787d9, type: 3}
   - {fileID: 8306964750140492960, guid: 8d2ba815c0cf8d240b3fc2cbf55bca74, type: 3}
+  - {fileID: 8306964750140492960, guid: 9f453c953346dbb4a9edec7ee1d858ac, type: 3}
   chunkParent: {fileID: 667529807}
 --- !u!1 &1120570062
 GameObject:

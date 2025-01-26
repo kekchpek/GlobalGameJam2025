@@ -30,7 +30,9 @@ namespace BubbleJump.Level
                 {
                     radius = 1.5f;
                 }
-                else radius = 2f;
+                else if (chance <= 60)
+                    radius = 2.5f;
+                else radius = 3f;
                 bubble.transform.localScale = Vector3.one * radius;
                 bubble.transform.SetParent(spawnPoint.transform);
             }
