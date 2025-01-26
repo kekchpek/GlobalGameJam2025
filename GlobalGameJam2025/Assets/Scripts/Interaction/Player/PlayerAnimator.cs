@@ -32,6 +32,12 @@ namespace BubbleJump.Interaction.Player
         private ISuperJumpModel _superJumpModel;
 
         [SerializeField]
+        private AudioSource _audioSource;
+
+        [SerializeField]
+        private AudioClip _screamClip;
+
+        [SerializeField]
         private Animator _animator;
 
         private static readonly int Speed = Animator.StringToHash("Speed");
@@ -104,6 +110,14 @@ namespace BubbleJump.Interaction.Player
                 ActivateState(State.Up);
                 if (v.magnitude > 20f)
                 {
+                    if (v.y < 0)
+                    {
+                        if (_audioSource.clip == null)
+                        {
+                            _audioSource.clip = _screamClip;
+                            _audioSource.Play();
+                        }
+                    }
                     ActivateState(State.Up2);
                 }
             }

@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c626c291-b088-4adf-be55-f67ab00a2d20" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Infrastructure/Audio.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GlobalGameJam2025/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/pop11.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/pop11.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Graphics/Font/BroncoPersonalUse - Outline.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Graphics/Font/BroncoPersonalUse - Outline.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Circle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Circle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Bubble/BubbleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Bubble/BubbleController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/BouncingBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/BouncingBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerFallBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerFallBehaviour.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +132,36 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerAnimator.cs</url>
+          <line>114</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerAnimator.cs" initialLine="114" containingFunctionPresentation="method 'Update'">
+            <startOffsets>
+              <option value="3395" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3427" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerAnimator.cs</url>
+          <line>115</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Interaction/Player/PlayerAnimator.cs" initialLine="115" containingFunctionPresentation="method 'Update'">
+            <startOffsets>
+              <option value="3452" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3472" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#UnityEngine.Collision2D" memberName="collider" />

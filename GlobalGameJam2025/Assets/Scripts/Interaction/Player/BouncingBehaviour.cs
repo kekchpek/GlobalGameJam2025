@@ -7,7 +7,6 @@ namespace BubbleJump.Interaction.Player
     [RequireComponent(typeof(Rigidbody2D))]
     public class BouncingBehaviour : MonoBehaviour
     {
-
         [SerializeField]
         private float _additionSpeed = 2f;
         

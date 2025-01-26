@@ -10,6 +10,9 @@ namespace BubbleJump.Interaction.Bubble
 
         [SerializeField]
         private List<AudioClip> _killClips = new();
+
+        [SerializeField]
+        private AudioClip _jumpClip;
         
         [SerializeField]
         private int _hp;
@@ -66,7 +69,8 @@ namespace BubbleJump.Interaction.Bubble
         {
             if (collision.collider.CompareTag("Player"))
             {
-               
+                _audioSource.clip = _jumpClip;
+                _audioSource.Play();
                 _hp--;
                 if( _hp != 0)
                 {

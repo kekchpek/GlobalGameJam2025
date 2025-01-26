@@ -644,8 +644,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _killClips:
-  - {fileID: 8300000, guid: 02d598c4d86514344acc53f4457ddb93, type: 3}
   - {fileID: 8300000, guid: dd37ba675897fa54595a07f067b2862b, type: 3}
+  - {fileID: 8300000, guid: 6516e8fea3bc39748b68ea5be2a9afaf, type: 3}
+  - {fileID: 8300000, guid: 7a43ef55005dda64588d57cdae8c75d2, type: 3}
+  _jumpClip: {fileID: 8300000, guid: b63475c3593d67746afb9b6b551fc749, type: 3}
   _hp: 0
   _collider: {fileID: 6563294503093159880}
   _audioSource: {fileID: 6338907567269631708}

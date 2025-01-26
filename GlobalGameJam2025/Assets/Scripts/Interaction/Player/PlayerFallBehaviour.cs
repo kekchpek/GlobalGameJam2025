@@ -9,6 +9,12 @@ namespace BubbleJump.Interaction.Player
     {
 
         [SerializeField]
+        private AudioClip _dieClip;
+
+        [SerializeField]
+        private AudioSource _audioSource;
+
+        [SerializeField]
         private Animator _animator;
         
         [SerializeField]
@@ -33,6 +39,8 @@ namespace BubbleJump.Interaction.Player
             {
                 if (!_playerModel.IsOnTheGround.Value)
                 {
+                    _audioSource.clip = _dieClip;
+                    _audioSource.Play();
                     _playerService.Die();
                     if (_ripPrefab)
                         Instantiate(_ripPrefab, transform.position, Quaternion.identity).SetTitle(_playerModel.PlayerHeight.Value.ToString("0"));
